@@ -1,0 +1,45 @@
+Version 1.1.3
+    Added:
+        - WP 5.5.1 compatibility
+        - PHP 7.4 compatibility
+        - ThemeREX Updater plugin
+        - elegro Crypto Payment plugin
+
+    Fixed:
+        - Update plugins to their latest versions
+
+    Changed:
+        - Update demo data
+
+Version 1.1.2
+    Added: 
+    	- Service Plus page 
+    Fixed: 
+        - Update plugins to their latest versions
+        - Compatibility with Slider Revolution 6.1.0
+        - Compatibility with WPBakery Page Builder 6.0.5
+        - Compatibility with WooCommerce 3.7
+      - Improve theme styles 
+    Changed:  
+    	- Replace default contact forms with Contact Form 7 
+    	- Update demo data
+
+Version 1.1.1
+	Added:
+	- GDPR Compliance plugin
+	Fixed:
+		- Compatibility with WP 5.0 
+		- Compatibility with PHP 7.2 
+		- Fix TRX Addons plugin: Contact Form shortcode and Pinterest share 
+		- Improve theme styles 
+	Changed:
+		- MailChimp form styles
+		- HTML "ol" tag styling. Use CSS class "list_styled" to style it
+
+Version 1.1
+  -Fixed errors in customize
+  -Fixed typo in widgets
+  -Fixed errors with icons
+  -Documentation updated
+
+Release – v.1.0

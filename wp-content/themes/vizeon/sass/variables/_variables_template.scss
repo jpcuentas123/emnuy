@@ -1,0 +1,34 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+
+//Fonts
+// --------------------------------------------------
+$font-family-second :     "Covered By Your Grace", cursive !default;
+
+// Colors
+$white                     : #ffffff !default;
+$black                     : #18212e !default;
+$nocolor                   : transparent !default;
+$theme-color               : #E74D57 !default;
+$theme-color-2             : #ffec4e !default;
+$border-color              : rgba(0, 0, 0, 0.1)!default;
+
+// Variables
+// --------------------------------------------------
+$image-theme-path-base  :'../images/' !default;
+$font-path              : '../fonts/';
+$woo-font-path          : '../fonts/woocommerce/' !default;
+
+// Theme Margin, Padding
+$theme-margin:             30px !default;
+$theme-padding:            30px !default;
+
+$copyright-padding:        30px 0 !default;
+
+//Color Skins Widget
+$widget-blue               : #0068AA !default;
+$widget-orange             : #EB5B00 !default;
+$widget-green              : #00884F !default;
+$widget-pink               : #ED1F58 !default;
+$widget-brown              : #4B393D !default;
+$widget-cornflower-blue    : #00A3DB !default;

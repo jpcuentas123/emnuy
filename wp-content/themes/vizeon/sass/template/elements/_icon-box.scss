@@ -1,0 +1,330 @@
+.elementor-view-stacked, .elementor-view-framed{
+  .gsc-icon-box{
+    .highlight-icon .icon{
+      padding: 0.5em;
+    }
+  }
+}
+.gsc-icon-box{
+  position: relative;
+  @include transition(all 0.35s);
+  @include clearfix();
+  &.icon-image{
+    .fa-1x{
+      display: block;
+      width: 24px;
+    }
+    .fa-2x{
+      display: block;
+      width: 32px;
+    }
+    .fa-3x{
+      display: block;
+      width: 64px;
+    }
+    .fa-4x{
+      display: block;
+      width: 96px;
+    }
+    &.top-center{
+      .fa-3x{
+        .icon{
+          img{
+            margin-top: 20px;
+          }
+        }
+      }
+      .fa-4x{
+        .icon{
+          img{
+            margin-top: 25px;
+          }
+        }
+      }
+    }
+  }
+  .elementor-view-stacked .elementor-icon{
+    padding: .25em;
+  }
+
+  .highlight_content{
+    margin-top: 5px;
+    .title{
+      font-size: 22px;
+      color: $black;
+      letter-spacing: 0;
+      margin-top: 0;
+    }
+    .desc{
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
+  .highlight-icon{
+    .elementor-icon{
+      font-size: inherit;
+    }
+    &.has-image-icon{
+      line-height: 1;
+    }
+    .icon-image{
+      img{
+        max-width: 100%;
+      }
+    }
+    .icon-container{
+      text-align: center;
+      line-height: 1;
+      position: relative;
+      color: $theme-color;
+      .icon{
+        position: relative;
+        z-index: 11;
+      }
+      &.fa-stack{
+        line-height: 2.4em!important;
+        @include size(2.4em, 2.4em);
+      }
+      &.text-theme{
+        &[class*="border-"]{
+          border-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+      &.text-white{
+        &[class*="border-"]{
+          border-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+      &.text-black{
+        color: $headings-color;
+        &[class*="border-"]{
+          border-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+      &.radius-1x{
+        &:after{
+          @include border-radius(3px);
+        }
+      }
+      &.radius-2x{
+        &:after{
+          @include border-radius(5px);
+        }
+      }
+      &.radius-5x{
+        &:after{
+          @include border-radius(50%);
+        }
+      }
+    }
+  }
+  &.icon-background{
+   .highlight-icon{
+     .icon-container{
+       @include transition(all 0.5s); 
+       &:after{
+         top: 0px;
+         left: 0px;
+         z-index: 1;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         content: '';
+         @include scale(1);
+         @include opacity(1);
+         @include transition(all 0.5s); 
+       }
+       &.bg-black{
+         &:after{
+           background: #222222;
+         }
+       }
+       &.bg-theme{
+         &:after{
+           background: $theme-color;
+         }
+       }
+     }
+   }
+   &.icon-border{
+     .highlight-icon{
+       .icon-container{
+         &.bg-black{
+           border-color: #222222;
+         }
+         &.bg-theme{
+           border-color: $theme-color;
+         }
+       }
+     }
+   }
+ }
+ &.icon-border:not(.icon-background){
+   .highlight-icon{
+     .icon-container{
+       color: $theme-color;
+     }
+   }
+ }
+ &.top-center{ //Top center
+   text-align: center;
+   max-width: 550px;
+   margin-right: auto;
+   margin-left: auto;
+   .highlight-icon{
+     text-align: center;
+     padding-right: 0!important;
+     .icon-container{
+       display: inline-block;
+       &.fa-1x{
+         font-size: 1.4em;
+       }
+     }
+   }
+   .title{
+     position: relative;
+     margin-bottom: 10px;
+     margin-top: 10px;
+   }
+   .highlight_content{
+     text-align: center;
+     max-width: 300px;
+     margin: 0 auto; 
+     .desc{
+       text-align: center;
+       font-weight: 400;
+       text-transform: normal;
+     }
+   }
+ }  
+
+ &.top-left{
+    text-align: left;
+    max-width: 300px;
+    clear: both;
+    .title{
+      padding: 5px 0;
+    }
+    .highlight-icon{
+      padding-bottom: 20px;
+    }
+    .highlight_content{
+      position: relative;
+      padding-top: 30px;
+      &:after{
+        content: '';
+        @include size(60px, 2px);
+        background: #F0F0F0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+    }
+  }
+ &.top-right{
+   text-align: right;
+   max-width: 300px;
+   clear: both;
+   float: right;
+   .title{
+     padding: 5px 0;
+   }
+   .highlight-icon{
+     width: 100%;
+     text-align: right;
+     .icon-container{
+       display: inline-block;
+     }
+   }
+ }
+ 
+ &.top-left-title, &.top-right-title{
+   .title-inner{
+     display: table;
+     margin-bottom: 15px;
+     .highlight-icon{
+       display: table-cell;
+       vertical-align: top;
+     }
+     .title{
+       display: table-cell;
+       vertical-align: middle;
+     }
+   }
+ }
+ &.top-left-title{
+   .highlight-icon{
+     padding-right: 15px;
+   }
+ }
+ &.top-right-title{
+   text-align: right;
+   @include clearfix();
+   .title-inner{
+     float: right;
+   }
+   .highlight-icon{
+     padding-left: 15px;
+   }
+   .desc{
+     float: right;
+     width: 100%;
+   } 
+ }
+ &.right, &.left{
+   display: table;
+   max-width: 600px;
+   .highlight-icon{
+    display: table-cell;
+    vertical-align: top;
+    padding-top: 2px;
+   }
+   .highlight_content{
+     display: table-cell;
+     vertical-align: top;
+   }
+   &.icon-background{
+    .highlight-icon{
+      padding-top: 0;
+    }
+   }
+ }
+ &.right{
+   text-align: right;
+ }
+ &.left{
+   text-align: left;
+ }
+ &.text-light{
+   .title{
+     color: $white;
+     &:after{
+       background: $white;
+     }
+     a{
+       color: $white;
+       &:hover{
+         color: $theme-color;
+       }
+     }
+   }
+   .highlight-icon{
+      .icon-container{
+        color: $white;
+      }
+   }
+   .desc{
+     color: rgba(255, 255, 255, 0.8);
+   }
+ }
+ &.box-background{
+   padding: 30px 40px;
+   @include transition(all 0.35s);
+   @include border-radius(6px);
+   &.active, &:hover, &:focus, &:active{
+    @include box-shadow(0px 0px 10px 3px rgba(0, 0, 0, 0.1));
+   }
+ }
+}

@@ -1,0 +1,401 @@
+.ajax-loading{
+	display: none;
+}
+.index-main-page{
+	margin-top: 30px;	
+}
+
+.wrapper-page{
+	.heading-title{ 
+		text-transform: capitalize;
+		margin-bottom: 0;
+		display: block;
+		font-size: 20px;
+		margin-top: 15px;
+	}
+}	
+
+//General page
+#wp-main-content{
+	min-height: 50px;
+}
+
+//Page Post Detail
+.single-blog{
+	.post-title{
+		color: $black;
+		margin-top: 15px;
+		.entry-title{
+			font-size: 30px;
+		}
+	}
+	.post-content{
+		border-bottom: 1px solid $border-color;
+	}
+	.post-desc-wrapper{
+		padding: 0!important;
+		.meta{
+			margin-bottom: 15px;
+			overflow: hidden;
+			> div{
+				float: left;
+				display: inline-block;
+				margin-right: 15px;
+				i{
+					margin-right: 8px;
+				}
+				a{
+					color: $theme-color;
+					&:hover{
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+	.author-about{
+		background: $white;
+		padding: 30px;
+		margin-bottom: 30px;
+		display: inline-block;
+    	width: 100%;
+    	.img-author {
+		    float: left;
+		}
+		.name-author {
+			line-height: 1;
+		    display: inline-block;
+		    font-size: 19px;
+		    font-weight: 400;
+		    margin-left: 20px;
+		}
+		.description {
+		    font-size: 13px;
+		    font-weight: 400;
+		    margin-left: 90px;
+		    margin-top: 5px;
+		}
+	}
+	.comments{
+		background: $white;
+		padding: 1px 30px 30px;
+		margin-bottom: 30px;
+		.comment-form{
+			.form-group{
+				margin-bottom: 20px;
+				display: table;
+				width: 100%;
+				padding: 0;
+				input{
+					border: 1px solid $border-color!important;
+					height: 40px;
+					@include box-shadow(none);
+				}
+				.area-comment{
+					margin-top: 41px;
+					#comment{
+						background: #F2F2F2;
+						border: none!important;
+					}
+				}
+			}	
+		}
+	}
+	.btn-linka{
+		margin-top: 10px;
+		&:hover a{
+			color: $white;
+		}
+	}
+}
+
+.pagination{
+	.disabled{
+		background: $theme-color;
+		color: $white;
+	} 
+	.current{
+		background: $theme-color;
+		color: $white;
+	}
+}
+
+.page.white{
+	.wp-content article{
+		background: $white;
+		padding: 20px;
+	}
+}
+
+/*
+**	Page 404
+*/
+body.error404{
+	.header-default{
+		border-bottom: 2px solid $border-color;
+	}
+}
+.not-found-wrapper{
+	padding: 300px 0 250px;
+   background: url('#{$image-theme-path-base}/bg-404.jpg') repeat-x center center $nocolor;
+   background-size: cover;
+	@include media-breakpoint-down(md){
+		padding: 100px 0 120px;
+	}
+	.not-found-title h1{
+		font-size: 120px;
+		text-transform: uppercase;
+		margin-bottom: 0;
+		line-height: 1;
+		color: $white;
+		@include media-breakpoint-down(md){
+			font-size: 42px;
+		}
+	}
+	.not-found-desc{
+		font-size: 16px;
+		max-width: 550px;
+		margin: 0 auto;  
+		color: #ccc;
+	}
+	.not-found-subtitle{
+		font-size: 30px;
+		font-weight: 600;
+		margin: 10px 0;
+		color: $white;
+		@include media-breakpoint-down(md){
+			font-size: 32px;
+		}
+	}
+	.not-found-home{
+		margin-top: 40px;
+		> a{
+			padding: 15px 20px;
+			@include border-radius(30px);
+			background: $white;
+			@include transition(all 0.35s);
+			color: #fff;
+			background: $theme-color;
+			i{
+				margin-right: 10px;
+				position: relative;
+				top: 2px;
+			}
+			&:hover, &:active, &:after{
+				background: darken($theme-color, 10%);
+				color: $white;
+			}
+		}
+	}
+}
+
+/*
+** Page contact us
+*/
+.contact-information{
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}	
+
+.wpcf7-form{
+	max-width: 950px;
+	margin: 0 auto;
+	p{
+		margin-bottom: 20px;
+		font-weight: 600;
+	}
+	.wpcf7-form-control-wrap{
+		display: block;
+		margin-bottom: 20px;
+	}
+	input[type*="email"], input[type*="text"]{
+		width: 100%;
+		height: 68px;
+		padding: 0 15px;
+		margin-bottom: 2px;
+		font-size: 15px;
+		@include box-shadow(none);
+		background: #F0F0F0;
+		border: none;
+		&::-webkit-input-placeholder { 
+		  color: $body-color;
+		  font-weight: 400;
+		}
+		&::-moz-placeholder {
+		  color: $body-color;
+		  font-weight: 400;
+		}
+		&:-ms-input-placeholder { 
+		  color: $body-color;
+		  font-weight: 400;
+		}
+		&:-moz-placeholder { 
+		  color: $body-color;
+		  font-weight: 400;
+		}
+	}
+	textarea{
+		background: #F0F0F0;
+		width: 100%;
+		padding: 20px 20px;
+		max-height: 135px;
+		border: none;
+		font-size: 15px;
+		@include box-shadow(none);
+		&::-webkit-input-placeholder { 
+		  color: $body-color;
+		  font-weight: 400;
+		}
+		&::-moz-placeholder {
+		  color: $body-color;
+		  font-weight: 400;
+		}
+		&:-ms-input-placeholder { 
+		  color: $body-color;
+		  font-weight: 400;
+		}
+		&:-moz-placeholder { 
+		  color: $body-color;
+		  font-weight: 400;
+		}
+	}
+	.action{
+		text-align: center;
+	}
+}
+
+.call-request-now-form{
+	textarea.box_message{
+		max-height: 252px;
+	}
+}
+
+.contact-form-full{
+	.wpcf7{
+		.row{
+			> div{
+				width: 100%!important;
+			}
+		}
+		input[type*="email"], input[type*="text"], textarea{
+			background: transparent;
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			margin-bottom: 30px;
+		}
+		textarea{
+			margin-bottom: 0;
+		}
+	}
+} 
+
+.contact-form-white{
+	.wpcf7{
+		input[type*="email"], input[type*="text"], textarea{
+			background: transparent;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			margin-bottom: 30px;
+			&::-webkit-input-placeholder { 
+			  color: $white;
+			  font-weight: 400;
+			}
+			&::-moz-placeholder {
+			  color: $white;
+			  font-weight: 400;
+			}
+			&:-ms-input-placeholder { 
+			  color: $white;
+			  font-weight: 400;
+			}
+			&:-moz-placeholder { 
+			  color: $white;
+			  font-weight: 400;
+			}
+		}
+		.action{
+			input.wpcf7-submit{
+				margin: 0;
+				background: $white;
+				color: $black;
+				@include transition(all 0.35s);
+				&:hover{
+					background: rgba(255, 255, 255, 0.8);
+				}
+			}
+		}
+	}
+}
+
+//woocommerce cart
+.woocommerce-cart{
+	h2{
+		font-size: 25px;
+	}
+	.shipping_calculator{
+		margin-bottom: 30px;
+	}
+	.cart-collaterals{
+		margin-bottom: 40px;
+	}
+	.actions {
+		input[name^="update_cart"]{
+			float: right;
+			margin-top: 5px;
+		}
+		.coupon{
+			float: left;
+			margin-bottom: 10px;
+			@include media-breakpoint-down(md){
+				width: 100%;
+			}
+		}	
+	}
+}
+
+.content-page-index{
+	margin-top: 10px;
+	.post-masonry-index{  
+		.post{
+			margin-bottom: 35px;
+			.post-thumbnail{
+				min-height: 35px;
+			}
+			.entry-content{
+				padding: 30px;
+				border: 1px solid $border-color;
+			}	
+			&.sticky{
+				.entry-content{
+					position: relative;
+					overflow: hidden;
+					&:after{
+						content: '\f02e';
+						font-family: "FontAwesome";
+						position: absolute;
+						top: -5px;
+						right: 15px;
+						color: $theme-color;
+						font-size: 30px;
+						z-index: 1; 
+						line-height: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+.single-gallery #wp-main-content{
+	padding-bottom: 45px;
+	#gallery-single{
+		max-width: 800px;
+		margin: 0 auto;
+	}
+}
+
+body.page{
+	.content-page-inner{
+		h1.title{
+			margin-bottom: 30px;
+		}
+	}
+}

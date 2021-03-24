@@ -1,0 +1,50 @@
+.gsc-pricing{
+  background: $white;
+  padding: 80px 30px 60px;
+  position: relative;
+  .content-inner{
+    max-width: 200px;
+    margin: 0 auto;
+    .title{
+      background: $black;
+      color: $white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 4px 15px;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 30px;
+    }
+    .plan-price{
+      padding-bottom: 20px;
+      .price-value{
+        font-size: 36px;
+        color: #50bac3;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      .interval{ 
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $theme-color-2;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+    }
+    .plan-list{
+      padding: 0;
+      list-style-type: none;
+      border-top: 2px solid $border-color;
+      border-bottom: 2px solid $border-color;
+      padding: 20px 0;
+      li{
+        padding: 5px 0;
+      }
+    }
+    .pricing-action{
+      margin-top: 30px;
+    }
+  }
+}

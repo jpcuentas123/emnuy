@@ -1,0 +1,163 @@
+.gsc-image-content{
+  &.skin-v1{
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    @include media-breakpoint-down(sm){
+      margin-bottom: 45px;
+    }
+    .image{
+      position: relative;
+      padding-left: 80px;
+      padding-right: 100px;
+      padding-bottom: 100px;
+      overflow: hidden;
+      @include media-breakpoint-down(sm){
+        padding: 0;
+        width: 100%;
+      }
+      img{
+        transition: all 0.35s;
+      }
+      &:hover{
+        img{
+          @include scale(1.05);
+        }
+      }
+    }
+    .title{
+      font-size: 14px;
+      writing-mode: tb-rl;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      width: 70px;
+      position: absolute;
+      top: 0;
+      bottom: 100px;
+      left: -50px;
+      z-index: 1;
+      background: $theme-color;
+      color: $white;
+      padding: 10px 25px;
+      overflow: hidden;
+      @include media-breakpoint-down(sm){
+        writing-mode: inherit;
+        width: 100%;
+        height: auto;
+        position: relative;
+        position: static;
+        margin-top: 10px;
+      }
+    }
+    .image-second{
+      position: absolute;
+      right: 0;
+      left: 180px;
+      bottom: 0;
+      padding: 20px;
+      background: $white;
+      z-index: 11;
+      @include media-breakpoint-down(sm){
+        top: 0;
+        bottom: auto;
+        padding: 10px;
+        right: 0;
+        left: auto;
+        max-width: 50%;
+      }
+      img{
+        transition: all 0.35s;
+      }
+      &:hover{
+        img{
+          @include scale(1.05);
+        }
+      }
+    }
+  }
+
+  &.skin-v2{
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+    @include border-radius(6px);
+    max-width: 420px;
+    margin-right: auto;
+    margin-left: auto;
+    @include box-shadow(0px 10px 30px rgba(0, 0, 0, 0.1));
+    .image{
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      img{
+        @include transition(all 3s);
+      }
+    }  
+    .box-content{
+      background: $white;
+      padding: 20px;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      @include transition(all 0.35s);
+      .title{
+        margin: 0;
+        font-size: 16px;
+        color: $black;
+      }
+      .desc{
+        margin-top: 5px;
+        color: $body-color;
+        font-weight: 400;
+      }
+    }
+    &:hover{
+
+    }
+  }
+  &.skin-v3{
+    max-width: 600px;
+    position: relative;
+    margin: 0 auto;
+    .image{
+      position: relative;
+      text-align: left;
+      width: 65%;
+      max-width: 300px;
+      @include media-breakpoint-down(md){
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+    .content-inner{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      background: $theme-color;
+      padding: 20px;
+      width: 58%;
+      padding: 30px 60px;
+      @include media-breakpoint-down(md){
+        left: 0;
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      .title{
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 32px;
+        margin: 0;
+      }
+    }
+  }
+}

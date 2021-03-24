@@ -1,0 +1,132 @@
+[12-Dec-2020 06:50:40 UTC] PHP Fatal error:  Uncaught Error: Cannot access private property WPCF7_Submission::$posted_data in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:777
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): save_form_data(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#6 /home3/xsn in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 777
+[12-Dec-2020 06:51:07 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type WPCF7_Submission as array in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:777
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): save_form_data(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#6 /home3/xsn9lkex/emba in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 777
+[12-Dec-2020 07:15:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function uploaded_files() on null in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:778
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): save_form_data(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#6 /home3/xsn9lkex/embaj in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 778
+[12-Dec-2020 07:17:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function uploaded_files() on null in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:778
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): save_form_data(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#6 /home3/xsn9lkex/embaj in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 778
+[12-Dec-2020 07:17:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function uploaded_files() on null in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:778
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): save_form_data(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#6 /home3/xsn9lkex/embaj in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 778
+[12-Dec-2020 15:58:52 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 780
+[12-Dec-2020 16:01:26 UTC] PHP Warning:  file_get_contents(): Filename cannot be empty in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 780
+[14-Dec-2020 05:44:48 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function maybe_skip_mail(), 1 passed in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php on line 289 and exactly 2 expected in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:761
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(289): maybe_skip_mail(false)
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(206): WP_Hook->apply_filters(false, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(461): apply_filters('wpcf7_skip_mail', false, Object(WPCF7_ContactForm))
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(87): WPCF7_Submission->mail()
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 761
+[14-Dec-2020 05:45:49 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function maybe_skip_mail(), 1 passed in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php on line 289 and exactly 2 expected in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:761
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(289): maybe_skip_mail(false)
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(206): WP_Hook->apply_filters(false, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(461): apply_filters('wpcf7_skip_mail', false, Object(WPCF7_ContactForm))
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(87): WPCF7_Submission->mail()
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 761
+[14-Dec-2020 05:57:18 UTC] PHP Parse error:  syntax error, unexpected '&' in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 790
+[14-Dec-2020 05:57:26 UTC] PHP Parse error:  syntax error, unexpected '&' in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 790
+[14-Dec-2020 05:57:27 UTC] PHP Parse error:  syntax error, unexpected '&' in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 790
+[15-Dec-2020 02:17:48 UTC] PHP Parse error:  syntax error, unexpected ')' in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/includes/emprendimientos_store.php on line 56
+[15-Dec-2020 02:33:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method WPCF7_Submission::get_uploaded_files() in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:795
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): handle_form_data_storage(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+# in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 795
+[15-Dec-2020 02:34:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method WPCF7_Submission::get_uploaded_files() in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:795
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): handle_form_data_storage(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+# in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 795
+[15-Dec-2020 02:37:30 UTC] PHP Fatal error:  Uncaught Error: Class 'EmprendimientosStore' not found in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:795
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): handle_form_data_storage(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#6 /home3/xsn9lkex/embajad in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 795
+[15-Dec-2020 02:38:25 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 2 to be string, array given in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/wp-db.php on line 1164
+[15-Dec-2020 02:38:25 UTC] Error Column 'telefono' cannot be null de la base de datos de WordPress para la consulta INSERT INTO `emprendimientos` (`nombre`, `correo`, `telefono`, `pais`, `logo`, `foto_producto_servicio`, `comentarios`, `pagina_web`, `autorizado_a_compartir`) VALUES ('Cesar', 'cesgar1995@gmail.com', NULL, '', 'd0cc03705d9781a852605805a8590cd4', NULL, NULL, NULL, NULL) realizada por require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, wpcf7_rest_create_feedback, WPCF7_ContactForm->submit, WPCF7_Submission::get_instance, WPCF7_Submission->proceed, WPCF7_Submission->before_send_mail, do_action_ref_array('wpcf7_before_send_mail'), WP_Hook->do_action, WP_Hook->apply_filters, handle_form_data_storage, EmprendimientosStore::store
+[15-Dec-2020 02:39:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method WPCF7_Submission::get_uploaded_files() in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:795
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): handle_form_data_storage(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+# in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 795
+[15-Dec-2020 02:40:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method WPCF7_Submission::get_uploaded_files() in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:795
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): handle_form_data_storage(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+# in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 795
+[15-Dec-2020 02:41:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method WPCF7_Submission::get_uploaded_files() in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:795
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): handle_form_data_storage(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+# in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 795
+[15-Dec-2020 02:45:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method WPCF7_Submission::get_uploaded_files() in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php:795
+Stack trace:
+#0 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(287): handle_form_data_storage(Object(WPCF7_ContactForm), false, Object(WPCF7_Submission))
+#1 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-includes/plugin.php(544): WP_Hook->do_action(Array)
+#3 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(451): do_action_ref_array('wpcf7_before_se...', Array)
+#4 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(75): WPCF7_Submission->before_send_mail()
+#5 /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+# in /home3/xsn9lkex/embajadores.projectsw2t.net/wp-content/themes/twentytwenty/functions.php on line 795

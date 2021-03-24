@@ -1,0 +1,124 @@
+.gsc-heading{
+  padding: 0 0 10px;
+  display: block;
+  width: 100%;
+  @include clearfix();
+  .heading-icon{
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .heading-video{
+    margin-bottom: 50px;
+    .video-link{
+      display: inline-block;
+      border-radius: 50%;
+      font-size: 24px;
+      color: $white;
+      background: $theme-color;
+      text-align: center;
+      position: relative;
+      @include transition(all 0.35s);
+      &:after{
+        content: '';
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        position: absolute;
+        z-index: 1;
+        border: 20px solid rgba(24, 33, 46, 0.4);
+        @include border-radius(50%);
+      }
+      &:hover{
+        @include scale(0.9);
+      }
+    }
+  }
+  .title{
+    font-size: 56px;
+    position: relative;
+    margin: 0;
+    strong{
+      font-family: $font-family-second;
+      color: $theme-color;
+      font-weight: 400;
+      font-size: 70px;
+    }
+    .high-light{
+      font-family: $font-family-second;
+      color: $theme-color-2;
+      font-size: 40px;
+      border-bottom: 2px solid $theme-color-2;
+    }
+    a{
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 3px, rgba(0, 0, 0, 0) 0%);
+      background-size: 1px 5px;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      text-decoration: none;
+      padding-bottom: 2px;
+      &:hover{
+        color: $theme-color;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, $theme-color 3px, rgba(0, 0, 0, 0) 0%);
+      }
+    }
+  }
+  .sub-title{
+    color: $theme-color;
+    font-size: 20px;
+    color: $theme-color;
+    font-family: $font-family-second;
+  }
+  .title-desc{
+    max-width: 700px;
+    margin: 0 auto;
+    p{
+      margin-bottom: 0;
+    }
+  }
+
+  &.align-center{
+    text-align: center;
+    .content-inner{
+      margin: 0 auto;
+    }
+  }
+  &.align-left{
+    text-align: left;
+    .title-desc{
+      float: left;
+    }
+    .title-icon{
+      padding-left: 50px;
+    }
+  }
+  &.align-right{
+    text-align: right;
+    .title-desc{
+      float: right;
+    }
+    .title-icon{
+      padding-right: 50px;
+    }
+  }
+  &.style-2{
+    .title{
+      font-size: 24px;
+      writing-mode: tb-rl;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: 0;
+      margin-right: 0;
+      font-family: $font-family-second;
+      letter-spacing: 0;
+      font-weight: 400;
+      white-space: nowrap;
+      @include media-breakpoint-down(sm){
+        writing-mode: inherit;
+        text-align: center;
+        transform: translateX(0);
+        left: 0;
+      }
+    }
+  }
+}

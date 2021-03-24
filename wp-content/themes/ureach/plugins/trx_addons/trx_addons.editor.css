@@ -1,0 +1,107 @@
+/* Tooltips */
+.trx_addons_tooltip {
+	border-bottom-style: solid;
+}
+.trx_addons_tooltip:before {
+	font-size:1em;
+	line-height:1.3em;
+	padding:0.54em 1.17em 0.34em;
+	-webkit-transform:translateX(-50%);
+	    -ms-transform:translateX(-50%);
+	        transform:translateX(-50%);
+	-webkit-border-radius: 0 !important;
+	    -ms-border-radius: 0 !important;
+			border-radius: 0 !important;
+}
+.trx_addons_tooltip:after {
+	margin-bottom:-8px;
+	-webkit-transform:none;
+	    -ms-transform:none;
+	        transform:none;
+}
+
+.trx_addons_accent_bg {
+	padding: 0.1em 0.4em 0 !important;
+}
+
+
+/* Dropcaps */
+.trx_addons_dropcap {
+	padding: 0;
+	margin: 0.05em 0.5em 0 0;
+	width: 4.375rem;
+	height: 4.375rem;
+	line-height: 4.875rem;
+	font-family: Poppins;
+	font-size: 3.75rem;
+	font-weight: 500;
+}
+.trx_addons_dropcap_style_2 {
+	font-size: 4.5rem;
+	text-align: left;
+	width: 3.375rem;
+	height: 3.375rem;
+	line-height: 3.675rem;
+	margin: 0.05em 0.2em 0 -5px;
+}
+
+/* Tiny text */
+.trx_addons_tiny_text {
+	letter-spacing:2px;
+}
+
+/* Lists */
+.trx_addons_list_parameters > li > strong,
+.trx_addons_list_parameters > li > em {
+	color:inherit;
+}
+.trx_addons_list_parameters > li > em {
+	font-family:inherit;
+}
+ul[class*="trx_addons_list_dot"] > li:before {
+	font-size: 1.46rem !important;
+	left: -1rem !important;
+}
+ul.trx_addons_list_success > li:before, ul.trx_addons_list_error > li:before, ul.trx_addons_list_plus > li:before, ul.trx_addons_list_minus > li:before {
+	left: -1.8em !important;
+	top: -2px !important;
+	font-size: 11px !important;
+}
+ul[class*="trx_addons_list"] > li:before {
+	top: -2px;
+}
+ol.list_styled {
+	list-style: none;
+	counter-reset: num;
+}
+ol.list_styled > li::before {
+	content: counter(num) '. ';
+	counter-increment: num;
+	position: absolute;
+	font-size: 1em;
+	left: -1.2em;
+	font-weight: 400;
+}
+ul[class*="trx_addons_list"] > li, ol[class*="trx_addons_list"] > li {
+	position: relative;
+	margin-bottom: 5px;
+}
+ul[class*="trx_addons_list"][class*="_circled"] {
+	font-family: Poppins;
+	font-size: 1.5rem;
+	font-weight: 500;
+	line-height: 2.063rem;
+	padding-left: 2.3em !important;
+	letter-spacing: -0.7px;
+}
+ul[class*="trx_addons_list"][class*="_circled"] > li:before {
+	font-size: 0.875rem !important;
+	left: -3.4rem !important;
+	top: -0.2em !important;
+	width: 2.188rem !important;
+	height: 2.188rem !important;
+	line-height: 2.188rem !important;
+}
+ul[class*="trx_addons_list"][class*="_circled"] > li {
+	margin-bottom: 1.6rem !important;
+}

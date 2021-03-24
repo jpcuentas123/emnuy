@@ -1,0 +1,54 @@
+.gsc-call-to-action{
+  .title{
+      font-weight: 600;
+      font-size: 30px;
+  }
+  &.button-right{ 
+      position: relative;
+      .content-inner{
+      .content{
+         padding-right: 180px;
+         max-width: 800px;
+         float: left;
+         @include media-breakpoint-down(sm){
+            padding-right: 0;
+            max-width: 100%;
+         }
+      }
+      .button-action{
+         position: absolute;
+         right: 0;
+         top: 50%;
+         margin-top: -20px;
+         z-index: 1;
+      }
+    }
+  }
+  &.button-left{
+      position: relative;
+      text-align: right;
+      .content{
+         padding-left: 120px;
+      }
+      .button-action{
+         position: absolute;
+         left: 0;
+         top: 50%;
+         @include translateY(-50%);
+         z-index: 1;
+      }
+   }
+   &.button-bottom{
+      padding: 15px 0;
+      .button-action{
+         margin-top: 30px;
+      }
+   }
+   &.button-center{
+      text-align: center;
+      margin: 0 auto;
+      .button-action{
+         margin-top: 30px;
+      }
+   }
+} 

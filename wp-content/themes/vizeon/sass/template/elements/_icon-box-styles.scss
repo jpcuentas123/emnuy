@@ -1,0 +1,160 @@
+.gsc-icon-box-styles{
+  .title{
+    margin-top: 0;
+  }
+  &.style-1{
+    position: relative;
+    @include clearfix();
+    background: $white;
+    text-align: left;
+    &:before{
+      content: '';
+      @include size(10px, 10px);
+      background: $theme-color-2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    &:after{
+      content: '';
+      @include size(10px, 10px);
+      background: $theme-color;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .icon-inner{
+      display: inline-block;
+      position: relative;
+      .icon{
+        font-size: 34px;
+        position: relative;
+        z-index: 9;
+      }
+    }
+    .content-inner{
+      .title{
+        color: $theme-color;
+        font-size: 20px;
+        font-family: $font-family-second;
+        letter-spacing: 0;
+        font-weight: 400;
+      }
+      .desc{
+        font-size: 20px;
+        font-weight: 600;
+        color: $black;
+        letter-spacing: 0.4px;
+        line-height: 1.4;
+      }
+    }
+  }
+  &.style-2{
+    position: relative;
+    @include clearfix();
+    text-align: center;
+    .block-content{
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-right: 15px;
+      &:before{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 30px;
+        z-index: 1;
+        background: $theme-color;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 30px;
+        z-index: 1;
+        background: $theme-color;
+        transform-origin: bottom left;
+        -ms-transform: skew(-11deg, 0deg);
+        -webkit-transform: skew(-11deg, 0deg);
+        transform: skew(-11deg, 0deg);
+        @include transition(all 0.35s);
+      }
+      .icon{
+        font-size: 34px;
+        position: relative;
+        z-index: 9;
+        &.icon-image{
+          line-height: 1;
+        }
+      }
+    }
+    .content-inner{
+      position: relative;
+      z-index: 9;
+      .title{
+        margin: 0 0 18px;
+        color: $headings-color;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+  &.style-3{
+    position: relative;
+    @include clearfix();
+    text-align: left;
+    .block-content{
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding: 40px 45px 50px 60px;
+      &:before{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 30px;
+        z-index: 1;
+        background: $theme-color;  
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 30px;
+        z-index: 1;
+        background: $theme-color;
+        transform-origin: bottom left;
+        -ms-transform: skew(-8deg, 0deg);
+        -webkit-transform: skew(-8deg, 0deg);
+        transform: skew(-8deg, 0deg);
+        @include transition(all 0.35s);
+      }
+    }
+    .content-inner{
+      position: relative;
+      z-index: 9;
+      .title{
+        margin: 18px 0;
+        color: $headings-color;
+        font-size: 26px;
+        font-weight: 700;
+      }
+    }
+  }
+}

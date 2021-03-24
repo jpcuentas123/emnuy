@@ -1,0 +1,21 @@
+{
+    "name": "Vizeon Themer",
+    "slug": "vizeon-themer",
+    "homepage": "http://gaviasthemes.com/",
+    "version": "1.2.2",
+    "requires": "4.0",
+    "tested": "4.9.1",
+    "last_updated": "2020-08-26",
+    "author": "Gaviasthemes",
+    "author_homepage": "http://gaviasthemes.com/",
+    "download_url": "http://gaviasthemes.com/plugins/vizeon-themer.zip",
+    "sections": {
+        "description": "Implement rich functions for themes base on Gaviasthemes. Wordpress framework and load widgets for theme used, this is required.",
+        "installation": "Upload or install by notice required plugin to your site, Activate it.",
+        "changelog": ""
+    },
+    "banners": {
+        "low": "http://gaviasthemes.com/tf/gavias_banner.png",
+        "high": "http://gaviasthemes.com/tf/gavias_banner.png"
+    }
+}

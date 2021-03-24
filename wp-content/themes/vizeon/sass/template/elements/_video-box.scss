@@ -1,0 +1,41 @@
+.gsc-video-box{
+  position: relative;
+  &.style-1{
+    .video-inner{
+      .video-image{
+        float: left;
+        position: relative;
+        text-align: left;
+        .video-action{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          @include size(195px, 195px);
+          line-height: 195px;
+          text-align: center;
+          font-size: 40px;
+          background: $white;
+          z-index: 11;
+        }
+      }
+    }
+  }
+  &.style-2{
+      .video-inner{
+        .video-image{
+          float: left;
+          position: relative;
+          width: 100%;
+          .video-action{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            margin-top: -23px;
+            text-align: center;
+          }
+        }
+      }
+  }
+}

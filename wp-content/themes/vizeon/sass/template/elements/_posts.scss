@@ -1,0 +1,48 @@
+.gva-posts-grid{
+   .posts-grid-filter{
+     margin-bottom: 15px;
+     width: 100%;
+     float: left;
+     ul.nav-tabs{
+       display: inline-block;
+       text-align: left;
+       float: left;
+       padding-top: 15px;
+       > li{
+         > a{
+           background: none;
+           font-weight: 500;
+           color: $black;
+           @include transition(all 0.35s);
+           text-transform: uppercase;
+           padding: 0 10px;
+           &.active{
+             color: $theme-color;
+           }
+         }
+       }
+     }
+     .view-all{
+       float: right;
+     }
+   }
+   .gva-content-items{
+     float: left;
+     width: 100%;
+   }
+}
+.gva-posts-grid{
+  .post{
+    margin-bottom: 60px;
+    .read-more{
+      display: block!important;
+      visible: visibility!important;
+    }
+  }
+}
+
+.gva-posts-carousel{
+  .post{
+    background: $white;
+  }
+}

@@ -1,0 +1,25 @@
+.gva-information{
+   .information-item{
+      display: table;
+      width: 100%;
+      .info-icon{
+         display: table-cell;
+         width: 20px;
+         position: relative;
+         top: 6px;
+      }
+      .info-content{
+         display: table-cell;
+      }
+   }
+   &.gva-information-carousel{
+      .information-item{
+         .info-icon{
+            top: 0;
+         }
+         .info-content{
+            vertical-align: middle;
+         }
+      }
+   }
+}

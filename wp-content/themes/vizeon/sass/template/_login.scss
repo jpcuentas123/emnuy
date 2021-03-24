@@ -1,0 +1,22 @@
+.logged-in.admin-bar{
+  .header-v2, .header-v1{
+    .stuck{
+      top: 30px;
+      @media(max-width: 782px){
+        top: 45px;
+      }
+      @media(max-width: 600px){
+        position: relative!important;
+        top: 0;
+      }
+    }
+  }
+  .mini-cart-header .dropdown .minicart-content{
+    padding-top: 45px;
+  }
+  @include media-breakpoint-down(md){
+   .gva-offcanvas-content.mobile{
+      padding-top: 30px;
+    }
+  }
+}

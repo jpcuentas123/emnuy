@@ -1,0 +1,45 @@
+.milestone-block {
+  &.style-1{
+    .box-content{
+      display: table;
+      .milestone-icon{
+        display: table-cell;
+        width: 70px;
+        vertical-align: middle;
+      }
+      .milestone-content{
+        display: table-cell;
+        padding-left: 35px;
+        .milestone-number-inner{
+          font-size: 70px;
+          line-height: 1;
+          color: $black;
+          font-family: $font-family-second;
+        }
+        .milestone-text{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  &.style-2{
+    .box-content{
+      .milestone-icon{
+        display: block;
+        text-align: left;
+      }
+      .milestone-content{
+        .milestone-number-inner{
+          font-size: 70px;
+          line-height: 1;
+          color: $black;
+          font-family: $font-family-second;
+
+        }
+        .milestone-text{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

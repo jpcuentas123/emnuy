@@ -1,0 +1,56 @@
+.fade{
+   &.active{
+      opacity: 1;
+   }
+}
+.gsc-tabs-color{
+   .nav_tabs{
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      > li{
+         float: left;
+         @include media-breakpoint-down(md){
+            width: 100%;
+         }
+         a{
+            display: inline-block;
+            padding: 36px 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%; 
+         }
+         &.active, &:hover{
+            a{
+               @include opacity(0.9);
+            }
+         }
+      }
+   }
+   .tab-content{
+      padding-top: 90px;
+      .tab-pane{
+         .tab-image{
+            width: 46%;
+            float: left;
+            padding-right: 30px;
+            @include media-breakpoint-down(md){
+               padding-right: 0;
+               width: 100%;
+               text-align: center;
+            }
+         }
+         .tab-content-item{
+            width: 54%;
+            float: left;
+            padding-left: 30px;
+            @include media-breakpoint-down(md){
+               padding-left: 0;
+               width: 100%;
+               margin-top: 30px;
+            }
+         }
+      }
+   }
+}

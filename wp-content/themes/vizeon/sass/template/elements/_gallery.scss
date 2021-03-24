@@ -1,0 +1,58 @@
+.gallery-post{
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  .background-overlay{
+    position: absolute;
+    @include size(0, 100%);
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: $theme-color;
+    transform-origin: bottom left;
+    @include transition(all 0.35s);
+    opacity: 0.1;
+  }
+  .images{
+    overflow: hidden;
+    position: relative;
+    img{
+      @include transition(all 5s); 
+    }
+  }
+  a.zoomGallery{ 
+    position: absolute;
+    @include size(32px, 32px);
+    top: 50%;
+    left: 50%;
+    margin-top: -16px;
+    margin-left: -16px;
+    z-index: 99;
+    color: $white;
+    font-size: 30px;
+    line-height: 1;
+    @include opacity(0);
+    @include transition(all 0.35s);
+    .icon-expand{
+      @include size(32px, 32px);
+      background: url('#{$image-theme-path-base}/icon-zoom-gallery.png') no-repeat center center;
+      display: inline-block;
+    }
+  }
+  &:hover{
+    .background-overlay{
+      width: 100%;
+      opacity: 0.9;
+    }
+    .zoomGallery{
+      opacity: 1;
+    }
+  }
+}
+
+.gva-gallery-grid{
+   .gallery-post{
+      margin-bottom: 30px;
+   }
+}
