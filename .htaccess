@@ -9,11 +9,11 @@
 # Cualquier cambio en las directivas que hay entre esos marcadores serán sobrescritas.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /emuny/
+RewriteBase /emnuy/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /emuny/index.php [L]
+RewriteRule . /emnuy/index.php [L]
 </IfModule>
 
 # END WordPress
