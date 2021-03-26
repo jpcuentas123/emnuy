@@ -3,7 +3,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <form className="EntrepreneurshipForm">
+    <form className="EntrepreneurshipForm" action="" method="POST" enctype="multipart/form-data">
       <header>
         <h4>Publicar emprendimiento</h4>
       </header>
@@ -66,6 +66,9 @@ const App = () => {
           </label>
         </div>
 
+      </section>
+      <section>
+        
       </section>
     </form>
 
