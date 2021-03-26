@@ -406,6 +406,170 @@ function cursos_datatable_shortcode($atts)
 }
 add_shortcode('cursos_datatable_shortcode', 'cursos_datatable_shortcode');
 
+
+function post_entrepreneurship_shortcode()
+{
+
+    if(isset($_POST['entrepreneurship_name'])){
+
+        //Global variables
+
+        $author_id = get_current_user_id();
+        $title = $_POST['entrepreneurship_name'];
+        $country = $_POST['entrepreneurship_country'];
+        $tel =  $_POST['entrepreneurship_tel'];
+        $email = $_POST['entrepreneurship_email'];
+        $aditional_info = $_POST['entrepreneurship_info'];
+        $website = $_POST['entrepreneurship_website'];
+        $archivo = $_FILES['entrepreneurship_logo']['name'];
+        $upload_dir = wp_upload_dir()['path']. '/';
+        $temp = "";
+        $imagePath = "";
+        $memberInfo = get_userdata($author_id);
+        
+        if (isset($archivo) && $archivo != "") {
+            //Obtenemos algunos datos necesarios sobre el archivo
+            $tipo = $_FILES['entrepreneurship_logo']['type'];
+            $tamano = $_FILES['entrepreneurship_logo']['size'];
+            $temp = $_FILES['entrepreneurship_logo']['tmp_name'];
+            $imagePath = $upload_dir.$archivo;
+            //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+            if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+                echo "<script> alert('Image not uploaded') </script>";
+            }
+            else {
+                //Si la imagen es correcta en tamaño y tipo
+                //Se intenta subir al servidor
+                if (move_uploaded_file($temp, $upload_dir.$archivo)) {
+                    //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                    echo "<script> alert('Image uploaded') </script>";
+                    chmod(dir_name.$archivo, 0777);
+                }
+                else {
+                //Si no se ha podido subir la imagen, mostramos un mensaje de error
+                   echo "<script> alert('Image not uploaded ".$temp."') </script>";
+
+                }
+            }
+        }
+        ob_start();
+        ?>
+
+                        <div class="EntrepreneurshipPost">
+                        <aside class="EntrepreneurshipPost-aside">
+                        <header>
+                            <h4><?php echo $memberInfo->first_name; ?></h4>
+                        </header>
+                        <article>
+                            <h5>País</h5>
+                            <p><?php echo $country; ?></p>
+                            <h5>Teléfono</h5>
+                            <p><?php echo $tel; ?></p>
+                            <h5>Email</h5>
+                            <p><?php echo $email; ?></p>
+                        </article>
+                        </aside>
+                        <article class="EntrepreneurshipPost-content">
+                            <header class="EntrepreneurshipPost-content-header">
+                                <h2><?php echo $title; ?></h2>
+                            </header>
+                            <article>
+                                <h5>
+                                Descripción
+                                </h5>
+                                <p>
+                                <?php echo $aditional_info; ?>
+                                </p>
+                                <h5>
+                                Página web
+                                </h5>
+                                <p>
+                                <?php echo $website; ?>
+                                </p>
+                            </article>
+                        </article>
+
+                    </div>
+                    
+                    
+                    <style>
+                    .EntrepreneurshipPost{
+                        display: grid;
+                        grid-template-columns: 0.3fr 1fr;
+                        padding: 20px;
+                        column-gap: 50px;
+                        text-align: center;
+                      
+                      }
+                      
+                      .EntrepreneurshipPost-aside, .EntrepreneurshipPost-content  {
+                        
+                        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+                        padding: 20px 40px;
+                        background-color: #F1F1F1;
+                        border-radius: 2px;
+                        
+                      }
+                      
+                      .EntrepreneurshipPost-content-header{
+                        padding: 40px 0px;
+                      }
+                      
+                      .EntrepreneurshipPost-content-header h2{
+                      
+                        font-size: 28px;
+                      }
+                      
+                      .EntrepreneurshipPost-content p{
+                        padding-bottom: 20px;  
+                      }
+                      .EntrepreneurshipPost-content{
+                        padding: 20px 150px;
+                      }
+                      .EntrepreneurshipPost-aside h4{
+                        font-size: 20px;
+                        padding: 20px 0px;
+                      }
+                    </stlye>
+
+        <?php
+
+        $content = ob_get_clean();
+        ob_end_clean();
+
+        $attachment = array(
+            'guid'           => $wp_upload_dir['url'] . '/' . basename( $imagePath ), 
+            'post_type' => 'attachment',
+            'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $imagePath ) ),
+            'post_content'   => $imagePath,
+            'post_status'    => 'inherit'
+        );
+
+        $post_id = wp_insert_post(
+            array(
+                'comment_status'	=>	'closed',
+                'ping_status'		=>	'closed',
+                'post_author'		=>	$author_id,
+                'post_title'		=>	$title,
+                'post_content'      =>  $content,
+                'post_status'		=>	'publish',
+                'post_type'		    =>	'post',
+                'post_excerpt' => ''
+            )
+        );
+        $attach_id = wp_insert_post( $attachment, $imagePath);
+
+        set_post_thumbnail( $post_id, $attach_id );
+
+        echo "
+            <script>
+                window.location.href='/emnuy/publicar'
+            </script>
+        ";
+    }
+}
+add_shortcode('post_entrepreneurship_shortcode', 'post_entrepreneurship_shortcode');
+
 /***
  * Handles redirection of already logged users if they go to login or register pages
  *
