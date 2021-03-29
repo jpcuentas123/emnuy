@@ -422,7 +422,7 @@ function post_entrepreneurship_shortcode()
         $aditional_info = $_POST['entrepreneurship_info'];
         $website = $_POST['entrepreneurship_website'];
         $archivo = $_FILES['entrepreneurship_logo']['name'];
-        $upload_dir = wp_upload_dir()['path']. '/';
+        $upload_dir = wp_upload_dir();
         $temp = "";
         $imagePath = "";
         $memberInfo = get_userdata($author_id);
@@ -432,7 +432,7 @@ function post_entrepreneurship_shortcode()
             $tipo = $_FILES['entrepreneurship_logo']['type'];
             $tamano = $_FILES['entrepreneurship_logo']['size'];
             $temp = $_FILES['entrepreneurship_logo']['tmp_name'];
-            $imagePath = $upload_dir.$archivo;
+            $imagePath = $upload_dir['path'].'/'.$archivo;
             //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
             if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
                 echo "<script> alert('Image not uploaded') </script>";
@@ -440,10 +440,10 @@ function post_entrepreneurship_shortcode()
             else {
                 //Si la imagen es correcta en tamaño y tipo
                 //Se intenta subir al servidor
-                if (move_uploaded_file($temp, $upload_dir.$archivo)) {
+                if (move_uploaded_file($temp, $imagePath)) {
                     //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                     echo "<script> alert('Image uploaded') </script>";
-                    chmod(dir_name.$archivo, 0777);
+                    chmod($imagePath, 0777);
                 }
                 else {
                 //Si no se ha podido subir la imagen, mostramos un mensaje de error
@@ -454,8 +454,7 @@ function post_entrepreneurship_shortcode()
         }
         ob_start();
         ?>
-
-                        <div class="EntrepreneurshipPost">
+                    <div class="EntrepreneurshipPost">
                         <aside class="EntrepreneurshipPost-aside">
                         <header>
                             <h4><?php echo $memberInfo->first_name; ?></h4>
@@ -490,59 +489,52 @@ function post_entrepreneurship_shortcode()
                         </article>
 
                     </div>
-                    
-                    
                     <style>
-                    .EntrepreneurshipPost{
-                        display: grid;
-                        grid-template-columns: 0.3fr 1fr;
-                        padding: 20px;
-                        column-gap: 50px;
-                        text-align: center;
-                      
-                      }
-                      
-                      .EntrepreneurshipPost-aside, .EntrepreneurshipPost-content  {
-                        
-                        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
-                        padding: 20px 40px;
-                        background-color: #F1F1F1;
-                        border-radius: 2px;
-                        
-                      }
-                      
-                      .EntrepreneurshipPost-content-header{
-                        padding: 40px 0px;
-                      }
-                      
-                      .EntrepreneurshipPost-content-header h2{
-                      
-                        font-size: 28px;
-                      }
-                      
-                      .EntrepreneurshipPost-content p{
-                        padding-bottom: 20px;  
-                      }
-                      .EntrepreneurshipPost-content{
-                        padding: 20px 150px;
-                      }
-                      .EntrepreneurshipPost-aside h4{
-                        font-size: 20px;
-                        padding: 20px 0px;
-                      }
-                    </stlye>
-
+                        .EntrepreneurshipPost{
+                            display: grid;
+                            grid-template-columns: 0.3fr 1fr;
+                            padding: 20px;
+                            column-gap: 50px;
+                            text-align: center;
+                        }
+                        .EntrepreneurshipPost-aside, .EntrepreneurshipPost-content  {
+                            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+                            padding: 20px 40px;
+                            background-color: #F1F1F1;
+                            border-radius: 2px;
+                        }
+                        .EntrepreneurshipPost-content-header{
+                            padding: 40px 0px;
+                        }
+                        .EntrepreneurshipPost-content-header h2{
+                            font-size: 28px;
+                        }
+                        .EntrepreneurshipPost-content p{
+                            padding-bottom: 20px;  
+                        }
+                        .EntrepreneurshipPost-content{
+                            padding: 20px 150px;
+                        }
+                        .EntrepreneurshipPost-aside h4{
+                            font-size: 20px;
+                            padding: 20px 0px;
+                        }
+                    </style>
+                    <script>
+                        document.getElementsByClassName("heading-title")[0].innerText = "Emprendimiento"
+                    </script>
         <?php
 
         $content = ob_get_clean();
         ob_end_clean();
 
         $attachment = array(
-            'guid'           => $wp_upload_dir['url'] . '/' . basename( $imagePath ), 
+            'guid'           => $upload_dir['url'] . '/' . basename( $imagePath ), 
             'post_type' => 'attachment',
             'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $imagePath ) ),
-            'post_content'   => $imagePath,
-            'post_status'    => 'inherit'
+            'post_content'   => '',
+            'post_status'    => 'inherit',
+            'post_mime_type' => 'image/jpeg'
         );
 
         $post_id = wp_insert_post(
@@ -552,12 +544,12 @@ function post_entrepreneurship_shortcode()
                 'post_author'		=>	$author_id,
                 'post_title'		=>	$title,
                 'post_content'      =>  $content,
-                'post_status'		=>	'publish',
+                'post_status'		=>	'private',
                 'post_type'		    =>	'post',
                 'post_excerpt' => ''
             )
         );
-        $attach_id = wp_insert_post( $attachment, $imagePath);
+        $attach_id = wp_insert_attachment( $attachment, $imagePath);
 
         set_post_thumbnail( $post_id, $attach_id );
 
@@ -569,6 +561,25 @@ function post_entrepreneurship_shortcode()
     }
 }
 add_shortcode('post_entrepreneurship_shortcode', 'post_entrepreneurship_shortcode');
+
+
+
+function show_user_emtrepreneurship () {
+
+    global $current_user;
+    get_currentuserinfo();                      
+
+    $args = array(
+        'author'        =>  $current_user->ID, // I could also use $user_ID, right?
+        'orderby'       =>  'post_date',
+        'order'         =>  'ASC' 
+        );
+
+    // get his posts 'ASC'
+    $current_user_posts = get_posts( $args );
+}
+
+add_shortcode('show_user_emtrepreneurship', 'show_user_emtrepreneurship_shortcode');
 
 /***
  * Handles redirection of already logged users if they go to login or register pages
