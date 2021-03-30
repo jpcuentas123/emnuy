@@ -409,6 +409,13 @@ add_shortcode('cursos_datatable_shortcode', 'cursos_datatable_shortcode');
 
 function post_entrepreneurship_shortcode()
 {
+    function redirect_to($url){
+        echo "
+        <script>
+            window.location.href='".$url."'
+        </script>
+    ";
+    }
 
     if(isset($_POST['entrepreneurship_name'])){
 
@@ -490,35 +497,7 @@ function post_entrepreneurship_shortcode()
 
                     </div>
                     <style>
-                        .EntrepreneurshipPost{
-                            display: grid;
-                            grid-template-columns: 0.3fr 1fr;
-                            padding: 20px;
-                            column-gap: 50px;
-                            text-align: center;
-                        }
-                        .EntrepreneurshipPost-aside, .EntrepreneurshipPost-content  {
-                            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
-                            padding: 20px 40px;
-                            background-color: #F1F1F1;
-                            border-radius: 2px;
-                        }
-                        .EntrepreneurshipPost-content-header{
-                            padding: 40px 0px;
-                        }
-                        .EntrepreneurshipPost-content-header h2{
-                            font-size: 28px;
-                        }
-                        .EntrepreneurshipPost-content p{
-                            padding-bottom: 20px;  
-                        }
-                        .EntrepreneurshipPost-content{
-                            padding: 20px 150px;
-                        }
-                        .EntrepreneurshipPost-aside h4{
-                            font-size: 20px;
-                            padding: 20px 0px;
-                        }
+                        .EntrepreneurshipPost{display: grid;grid-template-columns: 0.3fr 1fr;padding: 20px;column-gap: 50px;text-align: center;}.EntrepreneurshipPost-aside, .EntrepreneurshipPost-content { box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1); padding: 20px 40px; background-color: #F1F1F1; border-radius: 2px;} .EntrepreneurshipPost-content-header{ padding: 40px 0px;} .EntrepreneurshipPost-content-header h2{ font-size: 28px;} .EntrepreneurshipPost-content p{ padding-bottom: 20px;} .EntrepreneurshipPost-content{ padding: 20px 150px;} .EntrepreneurshipPost-aside h4{ font-size: 20px; padding: 20px 0px;}
                     </style>
                     <script>
                         document.getElementsByClassName("heading-title")[0].innerText = "Emprendimiento"
@@ -546,40 +525,95 @@ function post_entrepreneurship_shortcode()
                 'post_content'      =>  $content,
                 'post_status'		=>	'private',
                 'post_type'		    =>	'post',
-                'post_excerpt' => ''
+                'post_excerpt' => '',
+                'meta_input'   => array(
+                    'ent_title' => $title,
+                    'ent_country' => $country,
+                    'ent_tel' => $tel,
+                    'ent_email' => $email,
+                    'ent_additional_info' => $aditional_info,
+                    'ent_website' => $website
+                )
             )
         );
         $attach_id = wp_insert_attachment( $attachment, $imagePath);
 
         set_post_thumbnail( $post_id, $attach_id );
 
-        echo "
-            <script>
-                window.location.href='/emnuy/publicar'
-            </script>
-        ";
+        redirect_to("/emnuy/publicar");
+
+    }else{
+        redirect_to("/emnuy/publicar");
     }
+
+    
 }
 add_shortcode('post_entrepreneurship_shortcode', 'post_entrepreneurship_shortcode');
 
 
 
-function show_user_emtrepreneurship () {
-
-    global $current_user;
-    get_currentuserinfo();                      
+function show_user_emtrepreneurship_shortcode () {
+                   
 
     $args = array(
-        'author'        =>  $current_user->ID, // I could also use $user_ID, right?
+        'author'        =>  get_current_user_id(), // I could also use $user_ID, right?
         'orderby'       =>  'post_date',
-        'order'         =>  'ASC' 
+        'order'         =>  'ASC',
+        'posts_per_page' => -1,
+        'post_type' => 'post'
         );
 
     // get his posts 'ASC'
     $current_user_posts = get_posts( $args );
+
+
+    foreach ($current_user_posts as $key => $value) {
+        
+        $metadata = get_post_meta($value->ID);
+
+        ?>
+
+
+        <article class="Post">
+            <header class="Post-header">
+            <img src={banner} alt="Imagen no dispoible" />
+            </header>
+            <section class="Post-body">
+            <div class="Post-body-item">
+                <h3><?php echo $metadata['ent_title'][0]?></h3>
+            </div>
+            <div class="Post-body-item">
+                <small>País</small>
+                <p><?php echo $metadata['ent_country'][0]?></p>
+            </div>
+            <div class="Post-body-item Post-body-item--description">
+                <small>Descripción</small>
+                <p><?php echo $metadata['ent_additional_info'][0]?></p>
+            </div>
+
+            </section>
+            <footer class="Post-footer">
+            <div >
+                <img src={user_logo} alt="Imagen no dispoible" />
+            </div>
+            <div class="Post-footer-info">
+                <p class="Post-footer-info-user">Jorge</p>
+                <p class="Post-footer-info-date"><?php echo $value->post_date?></p>
+            </div>
+            </footer>
+        </article>
+        
+        <style>
+            .Post{ height: auto; width: 260px; box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);} .Post-header{ width: 237px; height: 157px;} .Post-header img{ width: 260px; height: 157px;} .Post-body{ padding: 20px;} .Post-body-item--description p{ height: 40px; overflow: hidden; text-overflow: ellipsis;} .Post-footer{ height: 74px; padding: 20px; display: grid; grid-template-columns: 0.3fr 1fr; margin-top: 20px;} .Post-footer img{ width: 30px; border-radius: 100%;} .Post-footer-info-user{ font-weight: 500; margin-top: 0px;} .Post-footer-info-date{ font-weight: 500; color: #747b86;}
+        </style>
+        
+        <?php
+
+    }
+
 }
 
-add_shortcode('show_user_emtrepreneurship', 'show_user_emtrepreneurship_shortcode');
+add_shortcode('show_user_emtrepreneurship_shortcode', 'show_user_emtrepreneurship_shortcode');
 
 /***
  * Handles redirection of already logged users if they go to login or register pages
