@@ -532,7 +532,8 @@ function post_entrepreneurship_shortcode()
                     'ent_tel' => $tel,
                     'ent_email' => $email,
                     'ent_additional_info' => $aditional_info,
-                    'ent_website' => $website
+                    'ent_website' => $website,
+                    'post_type' => "Emprendimiento"
                 )
             )
         );
@@ -570,41 +571,52 @@ function show_user_emtrepreneurship_shortcode () {
     foreach ($current_user_posts as $key => $value) {
         
         $metadata = get_post_meta($value->ID);
-
+        $banner = get_post( $metadata['_thumbnail_id'][0])->guid;
         ?>
 
+        <section className="PostContainer">
+    
+            <article class="Post">
+                <a href="<?php echo $value->guid; ?>" >
 
-        <article class="Post">
-            <header class="Post-header">
-            <img src={banner} alt="Imagen no dispoible" />
-            </header>
-            <section class="Post-body">
-            <div class="Post-body-item">
-                <h3><?php echo $metadata['ent_title'][0]?></h3>
-            </div>
-            <div class="Post-body-item">
-                <small>País</small>
-                <p><?php echo $metadata['ent_country'][0]?></p>
-            </div>
-            <div class="Post-body-item Post-body-item--description">
-                <small>Descripción</small>
-                <p><?php echo $metadata['ent_additional_info'][0]?></p>
-            </div>
-
-            </section>
-            <footer class="Post-footer">
-            <div >
-                <img src={user_logo} alt="Imagen no dispoible" />
-            </div>
-            <div class="Post-footer-info">
-                <p class="Post-footer-info-user">Jorge</p>
-                <p class="Post-footer-info-date"><?php echo $value->post_date?></p>
-            </div>
-            </footer>
-        </article>
-        
+                    <header class="Post-header">
+                        <img src=<?php echo $banner; ?> alt="Imagen no dispoible" />
+                    </header>
+                    <section class="Post-body">
+                        <div class="Post-body-item Post-body-item--title">
+                            <h3><?php echo $metadata['ent_title'][0]?></h3> <span className="Post-body-item-status Post-btn">En revisión</span>
+                        </div>
+                        <div className="Post-body-item Post-body-item--controls">
+                            <p className="Post-btn Post-btn-edit">Editar</p>
+                            <p className="Post-btn Post-btn-delete">Borrar</p>
+                        </div>
+                        <div class="Post-body-item">
+                            <small>Tipo</small>
+                            <p><?php echo $metadata['post_type'][0]?></p>
+                        </div>
+                        <div class="Post-body-item">
+                            <small>País</small>
+                            <p><?php echo $metadata['ent_country'][0]?></p>
+                        </div>
+                        <div class="Post-body-item Post-body-item--description">
+                            <small>Descripción</small>
+                            <p><?php echo $metadata['ent_additional_info'][0]?></p>
+                        </div>
+                    </section>
+                    <footer class="Post-footer">
+                        <div>
+                            <img src="http://1.gravatar.com/avatar/ddd7406cec173533b7eea8a6bec4c4d9?s=96&d=mm&r=g" alt="Imagen no dispoible" />
+                        </div>
+                        <div class="Post-footer-info">
+                            <p class="Post-footer-info-user">Jorge</p>
+                            <p class="Post-footer-info-date"><?php echo $value->post_date?></p>
+                        </div>
+                    </footer>
+                </a>
+            </article>
+        </section>
         <style>
-            .Post{ height: auto; width: 260px; box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);} .Post-header{ width: 237px; height: 157px;} .Post-header img{ width: 260px; height: 157px;} .Post-body{ padding: 20px;} .Post-body-item--description p{ height: 40px; overflow: hidden; text-overflow: ellipsis;} .Post-footer{ height: 74px; padding: 20px; display: grid; grid-template-columns: 0.3fr 1fr; margin-top: 20px;} .Post-footer img{ width: 30px; border-radius: 100%;} .Post-footer-info-user{ font-weight: 500; margin-top: 0px;} .Post-footer-info-date{ font-weight: 500; color: #747b86;}
+            .Post{ height: auto; width: 260px; box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1); margin: 0}.Post-header{ width: 237px; height: 157px; cursor: pointer}.Post-header img{ min-width: 260px !important; height: 157px}.Post-body{ padding: 20px}.Post-body-item--description p{ height: 50px; overflow: hidden; text-overflow: ellipsis}.Post-footer{ height: 120px; padding: 20px; display: grid; grid-template-columns: 0.3fr 1fr; margin-top: 20px}.Post-footer img{ width: 30px; border-radius: 100%}.Post-footer-info-user{ font-weight: 500; margin-top: 0px}.Post-footer-info-date{ font-weight: 500; color: #747b86}.PostContainer{ display: flex; justify-content: flex-start; align-items: flex-start; gap: 20px}.Post-body-item--title{ display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 1em 0px; cursor: pointer;}.Post-body-item--title h3{ margin: 0px}.Post-body-item-status{ font-size: 10px; background-color: #D69729;}.Post-body-item--controls{ display: flex; gap: 5px; font-size: 12px; margin-bottom: 20px}.Post-btn{ padding: 2px; border-radius: 2px; display: block; margin: 0px; color: white; transition: all 0.5s}.Post-btn-edit{ background-color: #33567A; padding: 5px 10px; cursor: pointer}.Post-btn-delete{ background-color: #8f0d0d; padding: 5px 10px; cursor: pointer}.Post-btn-edit:hover{ background-color: #3e6b9b}.Post-btn-delete:hover{ background-color: #b11111}
         </style>
         
         <?php
