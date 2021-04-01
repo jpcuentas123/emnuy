@@ -402,7 +402,9 @@ function cursos_datatable_shortcode($atts)
             break;
         }
     }
+
     return CursosStore::getDataToNonMembers($wpdb, $is_member);
+
 }
 add_shortcode('cursos_datatable_shortcode', 'cursos_datatable_shortcode');
 
@@ -526,6 +528,7 @@ function post_entrepreneurship_shortcode()
                 'post_status'		=>	'private',
                 'post_type'		    =>	'post',
                 'post_excerpt' => '',
+                'post_category' => array(82),
                 'meta_input'   => array(
                     'ent_title' => $title,
                     'ent_country' => $country,
@@ -551,6 +554,170 @@ function post_entrepreneurship_shortcode()
 }
 add_shortcode('post_entrepreneurship_shortcode', 'post_entrepreneurship_shortcode');
 
+function post_offer_shortcode()
+{
+    function redirect_to($url){
+        echo "
+        <script>
+            window.location.href='".$url."'
+        </script>
+    ";
+    }
+
+    if(isset($_POST['offer_name'])){
+
+        //Global variables
+
+        $author_id = get_current_user_id();
+        $title = $_POST['offer_name'];
+        $country = $_POST['offer_country'];
+        $tel =  $_POST['offer_tel'];
+        $email = $_POST['offer_email'];
+        $info = $_POST['offer_info'];
+        $job = $_POST['offer_job'];
+        $offer_additional_requiriments = $_POST['offer_additional_requiriments'];
+        $website = $_POST['offer_website'];
+        $archivo = $_FILES['offer_logo']['name'];
+        $upload_dir = wp_upload_dir();
+        $temp = "";
+        $imagePath = "";
+        $memberInfo = get_userdata($author_id);
+        
+        if (isset($archivo) && $archivo != "") {
+            //Obtenemos algunos datos necesarios sobre el archivo
+            $tipo = $_FILES['offer_logo']['type'];
+            $tamano = $_FILES['offer_logo']['size'];
+            $temp = $_FILES['offer_logo']['tmp_name'];
+            $imagePath = $upload_dir['path'].'/'.$archivo;
+            //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+            if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+                echo "<script> alert('Image not uploaded') </script>";
+            }
+            else {
+                //Si la imagen es correcta en tamaño y tipo
+                //Se intenta subir al servidor
+                if (move_uploaded_file($temp, $imagePath)) {
+                    //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                    chmod($imagePath, 0777);
+                }
+                else {
+                //Si no se ha podido subir la imagen, mostramos un mensaje de error
+                   echo "<script> alert('Image not uploaded ".$temp."') </script>";
+                   return false;
+
+                }
+            }
+        }
+        ob_start();
+        ?>
+                    <div class="EntrepreneurshipPost">
+
+                        <aside class="EntrepreneurshipPost-aside">
+
+                            <header>
+                                <h4><?php echo $memberInfo->first_name; ?></h4>
+                            </header>
+
+                            <article>
+                                <h5>País</h5>
+                                <p><?php echo $country; ?></p>
+                                <h5>Teléfono</h5>
+                                <p><?php echo $tel; ?></p>
+                                <h5>Email</h5>
+                                <p><?php echo $email; ?></p>
+                            </article>
+
+                        </aside>
+
+                        <article class="EntrepreneurshipPost-content">
+
+                            <header class="EntrepreneurshipPost-content-header">
+
+                                <h2><?php echo $title; ?></h2>
+
+                            </header>
+
+                            <article>
+                                <h5>    
+                                    Cargo
+                                </h5>
+                                <p>
+                                <?php echo $job; ?>
+                                </p>
+                                <h5>
+                                    Descripción
+                                </h5>
+                                <p>
+                                <?php echo $info; ?>
+                                </p>
+                                <h5>
+                                    Requerimientos adicionales
+                                </h5>
+                                <p>
+                                <?php echo $offer_additional_requiriments; ?>
+                                </p>
+
+                            </article>
+
+                        </article>
+
+                    </div>
+                    <style>
+                        .EntrepreneurshipPost{display: grid;grid-template-columns: 0.3fr 1fr;padding: 20px;column-gap: 50px;text-align: center;}.EntrepreneurshipPost-aside, .EntrepreneurshipPost-content { box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1); padding: 20px 40px; background-color: #F1F1F1; border-radius: 2px;} .EntrepreneurshipPost-content-header{ padding: 40px 0px;} .EntrepreneurshipPost-content-header h2{ font-size: 28px;} .EntrepreneurshipPost-content p{ padding-bottom: 20px;} .EntrepreneurshipPost-content{ padding: 20px 150px;} .EntrepreneurshipPost-aside h4{ font-size: 20px; padding: 20px 0px;}
+                    </style>
+                    <script>
+                        document.getElementsByClassName("heading-title")[0].innerText = "Emprendimiento"
+                    </script>
+        <?php
+
+        $content = ob_get_clean();
+        ob_end_clean();
+
+        $attachment = array(
+            'guid'           => $upload_dir['url'] . '/' . basename( $imagePath ), 
+            'post_type' => 'attachment',
+            'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $imagePath ) ),
+            'post_content'   => '',
+            'post_status'    => 'inherit',
+            'post_mime_type' => 'image/jpeg'
+        );
+
+        $post_id = wp_insert_post(
+            array(
+                'comment_status'	=>	'closed',
+                'ping_status'		=>	'closed',
+                'post_author'		=>	$author_id,
+                'post_title'		=>	$title,
+                'post_content'      =>  $content,
+                'post_status'		=>	'private',
+                'post_type'		    =>	'post',
+                'post_excerpt' => '',
+                'post_category' => array(79),
+                'meta_input'   => array(
+                    'offer_title' => $title,
+                    'offer_country' => $country,
+                    'offer_tel' => $tel,
+                    'offer_email' => $email,
+                    'offer_aditional_requiriments' => $offer_additional_requiriments,
+                    'offer_website' => $website,
+                    'post_type' => "Oferta laboral"
+                )
+            )
+        );
+        $attach_id = wp_insert_attachment( $attachment, $imagePath);
+
+        set_post_thumbnail( $post_id, $attach_id );
+
+        redirect_to("/emnuy/publicar-oferta");
+
+    }else{
+        redirect_to("/emnuy/publicar-oferta");
+    }
+
+    
+}
+
+add_shortcode('post_offer_shortcode', 'post_offer_shortcode');
 
 
 function show_user_emtrepreneurship_shortcode () {
