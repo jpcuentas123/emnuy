@@ -1,0 +1,180 @@
+2021-04-01T15:42:59+00:00 CRITICAL syntax error, unexpected 'any' (T_STRING), expecting ')' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 732
+
+2021-04-01T16:10:54+00:00 CRITICAL syntax error, unexpected 'Post' (T_STRING), expecting ';' or ',' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 768
+
+2021-04-01T16:11:06+00:00 CRITICAL syntax error, unexpected 'Post' (T_STRING), expecting ';' or ',' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 768
+
+2021-04-01T16:11:21+00:00 CRITICAL syntax error, unexpected 'Post' (T_STRING), expecting ';' or ',' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 768
+
+2021-04-01T17:06:56+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 844
+
+2021-04-01T17:07:12+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 844
+
+2021-04-01T17:07:50+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 844
+
+2021-04-01T17:08:13+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:09:13+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:09:51+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:14+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:14+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:26+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:29+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:29+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:29+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:29+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:29+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:29+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:30+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:30+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:30+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:30+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:10:30+00:00 CRITICAL syntax error, unexpected '}' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 846
+
+2021-04-01T17:12:54+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-includes\class-wp-hook.php(287): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-includes\plugin.php(206): WP_Hook->apply_filters('[delete_post_sh...', Array)
+#5 C:\xampp\htdocs\emnuy\wp-includes\rest-api\endpoints\class-wp-rest-posts-controller.php(1683): apply_filters('the_content', '<!-- wp:shortco...')
+#6 C:\xampp\htdocs\emnuy\wp-includes\rest-api\endpoints\class-wp-rest-posts-controller.php(831): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#7 C:\xampp\htdocs\emnuy\wp-includes\res en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 841
+
+2021-04-01T17:13:03+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-includes\class-wp-hook.php(287): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-includes\plugin.php(206): WP_Hook->apply_filters('[delete_post_sh...', Array)
+#5 C:\xampp\htdocs\emnuy\wp-includes\rest-api\endpoints\class-wp-rest-posts-controller.php(1683): apply_filters('the_content', '<!-- wp:shortco...')
+#6 C:\xampp\htdocs\emnuy\wp-includes\rest-api\endpoints\class-wp-rest-posts-controller.php(831): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#7 C:\xampp\htdocs\emnuy\wp-includes\res en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 841
+
+2021-04-01T17:13:07+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-includes\class-wp-hook.php(287): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-includes\plugin.php(206): WP_Hook->apply_filters('[delete_post_sh...', Array)
+#5 C:\xampp\htdocs\emnuy\wp-includes\rest-api\endpoints\class-wp-rest-posts-controller.php(1683): apply_filters('the_content', '<!-- wp:shortco...')
+#6 C:\xampp\htdocs\emnuy\wp-includes\rest-api\endpoints\class-wp-rest-posts-controller.php(831): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#7 C:\xampp\htdocs\emnuy\wp-includes\res en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 841
+
+2021-04-01T17:13:14+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-includes\class-wp-hook.php(287): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-includes\plugin.php(206): WP_Hook->apply_filters('[delete_post_sh...', Array)
+#5 C:\xampp\htdocs\emnuy\wp-includes\rest-api\endpoints\class-wp-rest-posts-controller.php(1683): apply_filters('the_content', '<!-- wp:shortco...')
+#6 C:\xampp\htdocs\emnuy\wp-includes\rest-api\endpoints\class-wp-rest-posts-controller.php(831): WP_REST_Posts_Controller->prepare_item_for_response(Object(WP_Post), Object(WP_REST_Request))
+#7 C:\xampp\htdocs\emnuy\wp-includes\res en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 841
+
+2021-04-01T17:14:32+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 841
+
+2021-04-01T17:16:04+00:00 CRITICAL Uncaught Error: Call to undefined function redirect_to() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:851
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includ en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 851
+
+2021-04-01T17:17:39+00:00 CRITICAL Uncaught Error: Call to undefined function redirect_to() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:851
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includ en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 851
+
+2021-04-01T17:21:53+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:845
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 845
+
+2021-04-01T17:23:30+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:845
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 845
+
+2021-04-01T17:23:58+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:845
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 845
+
+2021-04-01T17:24:07+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:845
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 845
+
+2021-04-01T17:25:03+00:00 CRITICAL Uncaught Error: Call to undefined function edit_post() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:845
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): delete_post_shortcode('', '', 'delete_post_sho...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(delete...', 'do_shortcode_ta...', '[delete_post_sh...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[delete_post_sh...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 845
+

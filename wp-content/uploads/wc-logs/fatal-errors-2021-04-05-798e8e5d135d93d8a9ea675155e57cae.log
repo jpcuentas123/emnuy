@@ -1,0 +1,30 @@
+2021-04-05T13:20:26+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T13:20:48+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T13:22:14+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T13:22:25+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T13:22:51+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T13:24:15+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T13:24:27+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T13:26:17+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T13:26:27+00:00 CRITICAL Cannot redeclare delete_post_shortcode() (previously declared in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:841) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 860
+
+2021-04-05T15:12:06+00:00 CRITICAL syntax error, unexpected '"/emnuy/editar-oferta/"' (T_CONSTANT_ENCAPSED_STRING) en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 790
+
+2021-04-05T16:20:17+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 976
+
+2021-04-05T16:20:32+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 976
+
+2021-04-05T16:21:28+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 976
+
+2021-04-05T16:21:32+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 976
+
+2021-04-05T16:21:37+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 976
+
