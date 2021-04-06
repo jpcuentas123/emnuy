@@ -866,257 +866,8 @@ function delete_post_shortcode (){
 add_shortcode('delete_post_shortcode', 'delete_post_shortcode');
 
 
-function update_offer_shortcode (){
 
-    $post_id = $_POST['post_id'];
-    $title = $_POST['offer_name'];
-    $country = $_POST['offer_country'];
-    $tel =  $_POST['offer_tel'];
-    $email = $_POST['offer_email'];
-    $info = $_POST['offer_info'];
-    $job = $_POST['offer_job'];
-    $offer_additional_requiriments = $_POST['offer_additional_requiriments'];
-    $website = $_POST['offer_website'];
-    $archivo = $_FILES['offer_logo']['name'];
-    $upload_dir = wp_upload_dir();
-    $temp = "";
-    $imagePath = null;
-    $author_id = get_current_user_id();
-    $memberInfo = get_userdata($author_id);
-    $thumbnail_id = $_POST['_thumbnail_id'];
-
-    if (isset($archivo) && $archivo != "") {
-        //Obtenemos algunos datos necesarios sobre el archivo
-        $tipo = $_FILES['offer_logo']['type'];
-        $tamano = $_FILES['offer_logo']['size'];
-        $temp = $_FILES['offer_logo']['tmp_name'];
-        $imagePath = $upload_dir['path'].'/'.$archivo;
-        //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
-        if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
-            echo "<script> alert('Image not uploaded') </script>";
-        }
-        else {
-            //Si la imagen es correcta en tamaño y tipo
-            //Se intenta subir al servidor
-            if (move_uploaded_file($temp, $imagePath)) {
-                //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-                chmod($imagePath, 0777);
-            }
-            else {
-            //Si no se ha podido subir la imagen, mostramos un mensaje de error
-               echo "<script> alert('Image not uploaded ".$temp."') </script>";
-               return false;
-
-            }
-        }
-    }
-
-    ob_start();
-        ?>
-            <div class="EntrepreneurshipPost">
-
-                <aside class="EntrepreneurshipPost-aside">
-
-                    <header>
-                        <h4><?php echo $memberInfo->first_name; ?></h4>
-                    </header>
-
-                    <article>
-                        <h5>País</h5>
-                        <p><?php echo $country; ?></p>
-                        <h5>Teléfono</h5>
-                        <p><?php echo $tel; ?></p>
-                        <h5>Email</h5>
-                        <p><?php echo $email; ?></p>
-                    </article>
-
-                </aside>
-
-                <article class="EntrepreneurshipPost-content">
-
-                    <header class="EntrepreneurshipPost-content-header">
-
-                        <h2><?php echo $title; ?></h2>
-
-                    </header>
-
-                    <article>
-                        <h5>    
-                            Cargo
-                        </h5>
-                        <p>
-                        <?php echo $job; ?>
-                        </p>
-                        <h5>
-                            Descripción
-                        </h5>
-                        <p>
-                        <?php echo $info; ?>
-                        </p>
-                        <h5>
-                            Requerimientos adicionales
-                        </h5>
-                        <p>
-                        <?php echo $offer_additional_requiriments; ?>
-                        </p>
-
-                    </article>
-
-                </article>
-
-            </div>
-            <style>
-                .EntrepreneurshipPost{display: grid;grid-template-columns: 0.3fr 1fr;padding: 20px;column-gap: 50px;text-align: center;}.EntrepreneurshipPost-aside, .EntrepreneurshipPost-content { box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1); padding: 20px 40px; background-color: #F1F1F1; border-radius: 2px;} .EntrepreneurshipPost-content-header{ padding: 40px 0px;} .EntrepreneurshipPost-content-header h2{ font-size: 28px;} .EntrepreneurshipPost-content p{ padding-bottom: 20px;} .EntrepreneurshipPost-content{ padding: 20px 150px;} .EntrepreneurshipPost-aside h4{ font-size: 20px; padding: 20px 0px;}
-            </style>
-            <script>
-                document.getElementsByClassName("heading-title")[0].innerText = "Emprendimiento"
-            </script>
-        <?php
-
-        $content = ob_get_clean();
-        ob_end_clean();
-
-    if(isset($post_id)){
-
-
-        wp_update_post(
-            array(
-                'ID' => $post_id,
-                'post_content' => $content,
-                'post_status' => 'private',
-                'meta_input'   => array(
-                    'offer_title' => $title,
-                    'offer_country' => $country,
-                    'offer_tel' => $tel,
-                    'offer_email' => $email,
-                    'offer_job' => $job,
-                    'offer_info' => $info,
-                    'offer_additional_requiriments' => $offer_additional_requiriments,
-                    'offer_website' => $website,
-                    'post_type' => "Oferta laboral"
-                )
-            ) 
-        );
-
-        if($imagePath !== null){
-            $attachment = array(
-                'ID'             => $thumbnail_id,
-                'guid'           => $upload_dir['url'] . '/' . basename( $imagePath ), 
-            );
-    
-            wp_update_post(
-                $attachment
-            );
-        }
-        
-        redirect_to("/emnuy/publicaciones");
-    }else{
-        redirect_to("/emnuy/publicaciones");
-    }
-}
-add_shortcode('update_offer_shortcode', 'update_offer_shortcode');
-
-
-function update__form_offer_shortcode (){
-
-    $post_id = $_POST['post_id'];
-    $metadata = get_post_meta($post_id);
-    $title = $metadata['offer_title'][0];
-    $country = $metadata['offer_country'][0];
-    $tel =  $metadata['offer_tel'][0];
-    $email = $metadata['offer_email'][0];
-    $info = $metadata['offer_info'][0];
-    $job = $metadata['offer_job'][0];
-    $offer_additional_requiriments = $metadata['offer_additional_requiriments'][0];
-    $website = $metadata['offer_website'][0];
-    $thumbnail_id = $metadata['_thumbnail_id'][0];
-    $upload_dir = wp_upload_dir();
-    $temp = "";
-    $imagePath = "";
-
-    ?>
-    <form class="EntrepreneurshipForm" action="http://localhost/emnuy/actualizando-oferta/" method="POST" enctype="multipart/form-data">
-      <header>
-        <h3>Actualizar oferta laboral</h3>
-      </header>
-      <section class="EntrepreneurshipForm-section">
-        <input value="<?php echo $post_id ?>" placeholder="" required id="post_id" name="post_id" style="display:none" />
-        <input value="<?php echo $thumbnail_id ?>" placeholder="" required id="_thumbnail_id" name="_thumbnail_id" style="display:none" />
-        <div>
-          <label for="">Nombre de la oferta</label>
-          <input value="<?php echo $metadata['offer_title'][0] ?>" placeholder="" required id="offer_name" name="offer_name"
-            autocomplete="given-name" />
-        </div>
-
-        <div>
-          <label for="">Correo electrónico</label>
-          <input value="<?php echo $metadata['offer_email'][0] ?>" placeholder="" required id="offer_email" name="offer_email"
-            autocomplete="email" />
-        </div>
-
-      </section>
-
-      <section class="EntrepreneurshipForm-section">
-
-        <div>
-          <label for="">Teléfono de contacto</label>
-          <input value="<?php echo $metadata['offer_tel'][0] ?>" placeholder="" required id="offer_tel" name="offer_tel" autocomplete="tel" />
-        </div>
-
-        <div>
-          <label for="">País</label>
-          <input value="<?php echo $metadata['offer_country'][0] ?>" placeholder="" required id="offer_country" name="offer_country"
-            autocomplete="country" />
-        </div>
-
-      </section>
-
-      <section class="EntrepreneurshipForm-section">
-
-        <div>
-          <label for="">Cargo requerido</label>
-          <input value="<?php echo $metadata['offer_job'][0] ?>" placeholder="" required id="offer_job" name="offer_job"
-            autocomplete="job" />
-        </div>
-        <div>
-          <label for="">Descripción</label>
-          <input value="<?php echo $metadata['offer_info'][0] ?>" id="offer_info" name="offer_info">
-          </input>
-        </div>
-
-      </section>
-      
-      <section class="EntrepreneurshipForm-section">
-
-          <div>
-          <label for="">¿Tienes algún requerimiento adicional?</label>
-          <input value="<?php echo $metadata['offer_additional_requiriments'][0] ?>" id="offer_additional_requiriments" name="offer_additional_requiriments" placeholder="Ejemplo: Ingles, Liderazgo" />
-        </div>
-
-        <div>
-          <label for="">¿Quieres adjuntar tu logo?</label>
-          <input value="" type="file" placeholder="" id="offer_logo" name="offer_logo" />
-        </div>
-
-      </section>
-
-      <section class="EntrepreneurshipForm-section lastsection">
-          
-
-      </section>
-      <section class="EntrepreneurshipForm-section controls">
-        <button>Actualizar</button>
-      </section>
-    </form>
-    <style>
-        .EntrepreneurshipForm{ display: flex; flex-direction: column; gap: 40px; width: 50vw; padding: 50px 20px; box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);} .EntrepreneurshipForm-section{ display: flex; gap: 30px; justify-content: space-between;} .EntrepreneurshipForm-section >div{ display: flex; flex-direction: column;} .EntrepreneurshipForm-section input, textarea{ border: 1px solid #d8d8d8; border-radius: 4px; padding: 10px; margin-top: 20px; width: 400px;} .EntrepreneurshipForm-section input::placeholder{ color: #ccc;} .lastsection{ flex-direction: column;} .EntrepreneurshipForm-section input[type="checkbox"]{ box-shadow: none;} .EntrepreneurshipForm-section.controls button{ border: none; color: white; padding: 10px 20px; background-color: #18212E; cursor: pointer; transition: all 0.5s;} .EntrepreneurshipForm-section.controls button:hover{ background-color: #212e3f;}
-    </style>
-    <?php
-
-
-}
-add_shortcode('update__form_offer_shortcode', 'update__form_offer_shortcode');
-
+//Update emtrepreneurship
 
 function update__form_entrepreneurship_shortcode (){
 
@@ -1299,6 +1050,256 @@ function update_entrepreneurship_shortcode (){
 }
 add_shortcode('update_entrepreneurship_shortcode', 'update_entrepreneurship_shortcode');
 
+
+//Update offer
+
+function update_offer_shortcode (){
+
+    $post_id = $_POST['post_id'];
+    $title = $_POST['offer_name'];
+    $country = $_POST['offer_country'];
+    $tel =  $_POST['offer_tel'];
+    $email = $_POST['offer_email'];
+    $info = $_POST['offer_info'];
+    $job = $_POST['offer_job'];
+    $offer_additional_requiriments = $_POST['offer_additional_requiriments'];
+    $website = $_POST['offer_website'];
+    $archivo = $_FILES['offer_logo']['name'];
+    $upload_dir = wp_upload_dir();
+    $temp = "";
+    $imagePath = null;
+    $author_id = get_current_user_id();
+    $memberInfo = get_userdata($author_id);
+    $thumbnail_id = $_POST['_thumbnail_id'];
+
+    if (isset($archivo) && $archivo != "") {
+        //Obtenemos algunos datos necesarios sobre el archivo
+        $tipo = $_FILES['offer_logo']['type'];
+        $tamano = $_FILES['offer_logo']['size'];
+        $temp = $_FILES['offer_logo']['tmp_name'];
+        $imagePath = $upload_dir['path'].'/'.$archivo;
+        //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+        if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+            echo "<script> alert('Image not uploaded') </script>";
+        }
+        else {
+            //Si la imagen es correcta en tamaño y tipo
+            //Se intenta subir al servidor
+            if (move_uploaded_file($temp, $imagePath)) {
+                //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                chmod($imagePath, 0777);
+            }
+            else {
+            //Si no se ha podido subir la imagen, mostramos un mensaje de error
+               echo "<script> alert('Image not uploaded ".$temp."') </script>";
+               return false;
+
+            }
+        }
+    }
+
+    ob_start();
+        ?>
+            <div class="EntrepreneurshipPost">
+
+                <aside class="EntrepreneurshipPost-aside">
+
+                    <header>
+                        <h4><?php echo $memberInfo->first_name; ?></h4>
+                    </header>
+
+                    <article>
+                        <h5>País</h5>
+                        <p><?php echo $country; ?></p>
+                        <h5>Teléfono</h5>
+                        <p><?php echo $tel; ?></p>
+                        <h5>Email</h5>
+                        <p><?php echo $email; ?></p>
+                    </article>
+
+                </aside>
+
+                <article class="EntrepreneurshipPost-content">
+
+                    <header class="EntrepreneurshipPost-content-header">
+
+                        <h2><?php echo $title; ?></h2>
+
+                    </header>
+
+                    <article>
+                        <h5>    
+                            Cargo
+                        </h5>
+                        <p>
+                        <?php echo $job; ?>
+                        </p>
+                        <h5>
+                            Descripción
+                        </h5>
+                        <p>
+                        <?php echo $info; ?>
+                        </p>
+                        <h5>
+                            Requerimientos adicionales
+                        </h5>
+                        <p>
+                        <?php echo $offer_additional_requiriments; ?>
+                        </p>
+
+                    </article>
+
+                </article>
+
+            </div>
+            <style>
+                .EntrepreneurshipPost{display: grid;grid-template-columns: 0.3fr 1fr;padding: 20px;column-gap: 50px;text-align: center;}.EntrepreneurshipPost-aside, .EntrepreneurshipPost-content { box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1); padding: 20px 40px; background-color: #F1F1F1; border-radius: 2px;} .EntrepreneurshipPost-content-header{ padding: 40px 0px;} .EntrepreneurshipPost-content-header h2{ font-size: 28px;} .EntrepreneurshipPost-content p{ padding-bottom: 20px;} .EntrepreneurshipPost-content{ padding: 20px 150px;} .EntrepreneurshipPost-aside h4{ font-size: 20px; padding: 20px 0px;}
+            </style>
+            <script>
+                document.getElementsByClassName("heading-title")[0].innerText = "Emprendimiento"
+            </script>
+        <?php
+
+        $content = ob_get_clean();
+        ob_end_clean();
+
+    if(isset($post_id)){
+
+
+        wp_update_post(
+            array(
+                'ID' => $post_id,
+                'post_content' => $content,
+                'post_status' => 'private',
+                'meta_input'   => array(
+                    'offer_title' => $title,
+                    'offer_country' => $country,
+                    'offer_tel' => $tel,
+                    'offer_email' => $email,
+                    'offer_job' => $job,
+                    'offer_info' => $info,
+                    'offer_additional_requiriments' => $offer_additional_requiriments,
+                    'offer_website' => $website,
+                    'post_type' => "Oferta laboral"
+                )
+            ) 
+        );
+
+
+        wp_update_post(
+            array(
+                'ID'             => $thumbnail_id,
+                'guid'           => $upload_dir['url'] . '/' . basename( $imagePath )
+            )
+        );
+        
+        redirect_to("/emnuy/publicaciones");
+    }else{
+        redirect_to("/emnuy/publicaciones");
+    }
+}
+add_shortcode('update_offer_shortcode', 'update_offer_shortcode');
+
+
+function update__form_offer_shortcode (){
+
+    $post_id = $_POST['post_id'];
+    $metadata = get_post_meta($post_id);
+    $title = $metadata['offer_title'][0];
+    $country = $metadata['offer_country'][0];
+    $tel =  $metadata['offer_tel'][0];
+    $email = $metadata['offer_email'][0];
+    $info = $metadata['offer_info'][0];
+    $job = $metadata['offer_job'][0];
+    $offer_additional_requiriments = $metadata['offer_additional_requiriments'][0];
+    $website = $metadata['offer_website'][0];
+    $thumbnail_id = $metadata['_thumbnail_id'][0];
+    $upload_dir = wp_upload_dir();
+    $temp = "";
+    $imagePath = "";
+
+    ?>
+    <form class="EntrepreneurshipForm" action="http://localhost/emnuy/actualizando-oferta/" method="POST" enctype="multipart/form-data">
+      <header>
+        <h3>Actualizar oferta laboral</h3>
+      </header>
+      <section class="EntrepreneurshipForm-section">
+        <input value="<?php echo $post_id ?>" placeholder="" required id="post_id" name="post_id" style="display:none" />
+        <input value="<?php echo $thumbnail_id ?>" placeholder="" required id="_thumbnail_id" name="_thumbnail_id" style="display:none" />
+        <div>
+          <label for="">Nombre de la oferta</label>
+          <input value="<?php echo $metadata['offer_title'][0] ?>" placeholder="" required id="offer_name" name="offer_name"
+            autocomplete="given-name" />
+        </div>
+
+        <div>
+          <label for="">Correo electrónico</label>
+          <input value="<?php echo $metadata['offer_email'][0] ?>" placeholder="" required id="offer_email" name="offer_email"
+            autocomplete="email" />
+        </div>
+
+      </section>
+
+      <section class="EntrepreneurshipForm-section">
+
+        <div>
+          <label for="">Teléfono de contacto</label>
+          <input value="<?php echo $metadata['offer_tel'][0] ?>" placeholder="" required id="offer_tel" name="offer_tel" autocomplete="tel" />
+        </div>
+
+        <div>
+          <label for="">País</label>
+          <input value="<?php echo $metadata['offer_country'][0] ?>" placeholder="" required id="offer_country" name="offer_country"
+            autocomplete="country" />
+        </div>
+
+      </section>
+
+      <section class="EntrepreneurshipForm-section">
+
+        <div>
+          <label for="">Cargo requerido</label>
+          <input value="<?php echo $metadata['offer_job'][0] ?>" placeholder="" required id="offer_job" name="offer_job"
+            autocomplete="job" />
+        </div>
+        <div>
+          <label for="">Descripción</label>
+          <input value="<?php echo $metadata['offer_info'][0] ?>" id="offer_info" name="offer_info">
+          </input>
+        </div>
+
+      </section>
+      
+      <section class="EntrepreneurshipForm-section">
+
+          <div>
+          <label for="">¿Tienes algún requerimiento adicional?</label>
+          <input value="<?php echo $metadata['offer_additional_requiriments'][0] ?>" id="offer_additional_requiriments" name="offer_additional_requiriments" placeholder="Ejemplo: Ingles, Liderazgo" />
+        </div>
+
+        <div>
+          <label for="">¿Quieres adjuntar tu logo?</label>
+          <input value="" type="file" placeholder="" id="offer_logo" name="offer_logo" />
+        </div>
+
+      </section>
+
+      <section class="EntrepreneurshipForm-section lastsection">
+          
+
+      </section>
+      <section class="EntrepreneurshipForm-section controls">
+        <button>Actualizar</button>
+      </section>
+    </form>
+    <style>
+        .EntrepreneurshipForm{ display: flex; flex-direction: column; gap: 40px; width: 50vw; padding: 50px 20px; box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);} .EntrepreneurshipForm-section{ display: flex; gap: 30px; justify-content: space-between;} .EntrepreneurshipForm-section >div{ display: flex; flex-direction: column;} .EntrepreneurshipForm-section input, textarea{ border: 1px solid #d8d8d8; border-radius: 4px; padding: 10px; margin-top: 20px; width: 400px;} .EntrepreneurshipForm-section input::placeholder{ color: #ccc;} .lastsection{ flex-direction: column;} .EntrepreneurshipForm-section input[type="checkbox"]{ box-shadow: none;} .EntrepreneurshipForm-section.controls button{ border: none; color: white; padding: 10px 20px; background-color: #18212E; cursor: pointer; transition: all 0.5s;} .EntrepreneurshipForm-section.controls button:hover{ background-color: #212e3f;}
+    </style>
+    <?php
+
+
+}
+add_shortcode('update__form_offer_shortcode', 'update__form_offer_shortcode');
 
 
 
