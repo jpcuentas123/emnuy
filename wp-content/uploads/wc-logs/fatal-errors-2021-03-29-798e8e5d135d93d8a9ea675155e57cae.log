@@ -1,0 +1,71 @@
+2021-03-29T14:23:25+00:00 CRITICAL syntax error, unexpected '}', expecting ';' or ',' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 589
+
+2021-03-29T14:23:26+00:00 CRITICAL syntax error, unexpected '}', expecting ';' or ',' en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 589
+
+2021-03-29T14:27:27+00:00 CRITICAL Uncaught Error: Object of class WP_Post could not be converted to string in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:585
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): show_user_emtrepreneurship_shortcode('', '', 'show_user_emtre...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(show_u...', 'do_shortcode_ta...', '[show_user_emtr...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[show_user_emtr...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-c en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 585
+
+2021-03-29T14:28:09+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:585
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): show_user_emtrepreneurship_shortcode('', '', 'show_user_emtre...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(show_u...', 'do_shortcode_ta...', '[show_user_emtr...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[show_user_emtr...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 585
+
+2021-03-29T14:28:59+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:585
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): show_user_emtrepreneurship_shortcode('', '', 'show_user_emtre...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(show_u...', 'do_shortcode_ta...', '[show_user_emtr...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[show_user_emtr...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 585
+
+2021-03-29T14:29:13+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:585
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): show_user_emtrepreneurship_shortcode('', '', 'show_user_emtre...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(show_u...', 'do_shortcode_ta...', '[show_user_emtr...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[show_user_emtr...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 585
+
+2021-03-29T14:29:20+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:585
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): show_user_emtrepreneurship_shortcode('', '', 'show_user_emtre...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(show_u...', 'do_shortcode_ta...', '[show_user_emtr...')
+#3 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\widgets\shortcode.php(130): do_shortcode('[show_user_emtr...')
+#4 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\controls-stack.php(1894): Elementor\Widget_Shortcode->render()
+#5 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(530): Elementor\Controls_Stack->render_by_mode()
+#6 C:\xampp\htdocs\emnuy\wp-content\plugins\elementor\includes\base\widget-base.php(660): Elementor\Widget_Base->render_content()
+#7 C:\xampp\htdocs\emnuy\wp-content\plugins en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 585
+
+2021-03-29T15:06:22+00:00 CRITICAL Uncaught Error: Call to undefined function redirect_to() in C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php:564
+Stack trace:
+#0 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(343): post_entrepreneurship_shortcode('', '', 'post_entreprene...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 C:\xampp\htdocs\emnuy\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(post_e...', 'do_shortcode_ta...', '[post_entrepren...')
+#3 C:\xampp\htdocs\emnuy\wp-includes\class-wp-hook.php(287): do_shortcode('[post_entrepren...')
+#4 C:\xampp\htdocs\emnuy\wp-includes\plugin.php(206): WP_Hook->apply_filters('[post_entrepren...', Array)
+#5 C:\xampp\htdocs\emnuy\wp-includes\post-template.php(253): apply_filters('the_content', '<!-- wp:shortco...')
+#6 C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\templates\layout\page.php(16): the_content()
+#7 C:\xampp\htdocs\emnuy\wp-includes\template.php(732): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\emnuy\wp-includes\template.php(676): load_template('C: en C:\xampp\htdocs\emnuy\wp-content\themes\vizeon\functions.php en la línea 564
+
