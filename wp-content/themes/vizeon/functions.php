@@ -406,6 +406,84 @@ function cursos_datatable_shortcode($atts)
 }
 add_shortcode('cursos_datatable_shortcode', 'cursos_datatable_shortcode');
 
+
+function post_entrepreneurship_shortcode()
+{
+
+    if(isset($_POST['entrepreneurship_name'])){
+        $author_id = get_current_user_id();
+        $title = $_POST['entrepreneurship_name'];
+            //Recogemos el archivo enviado por el formulario
+        $archivo = basename($_FILES['entrepreneurship_logo']['name']);
+        $upload_dir = wp_upload_dir()['path']. '/';
+        $temp = "";
+        $img_src = "";
+        if (isset($archivo) && $archivo != "") {
+            //Obtenemos algunos datos necesarios sobre el archivo
+            $tipo = $_FILES['entrepreneurship_logo']['type'];
+            $tamano = $_FILES['entrepreneurship_logo']['size'];
+            $temp = $_FILES['entrepreneurship_logo']['tmp_name'];
+            $img_src = $upload_dir.$archivo;
+            //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+            if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+                echo "<script> alert('Image not uploaded') </script>";
+            }
+            else {
+                //Si la imagen es correcta en tamaño y tipo
+                //Se intenta subir al servidor
+                if (move_uploaded_file($temp, $upload_dir.$archivo)) {
+                    //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                    echo "<script> alert('Image uploaded') </script>";
+                    chmod(dir_name.$archivo, 0777);
+                }
+                else {
+                //Si no se ha podido subir la imagen, mostramos un mensaje de error
+    |               echo "<script> alert('Image not uploaded ".$temp."') </script>";
+
+                }
+            }
+        }
+        $content = 'This is the content of the post that we are creating right now with code. 
+                    More text: I motsetning til hva mange tror, er ikke Lorem Ipsum bare tilfeldig tekst. 
+                    Dets røtter springer helt tilbake til et stykke klassisk latinsk litteratur fra 45 år f.kr., 
+                    hvilket gjør det over 2000 år gammelt. Richard McClintock - professor i latin ved Hampden-Sydney 
+                    College i Virginia, USA - slo opp flere av de mer obskure latinske ordene, consectetur, 
+                    fra en del av Lorem Ipsum, og fant dets utvilsomme opprinnelse gjennom å studere bruken 
+                    av disse ordene i klassisk litteratur. Lorem Ipsum kommer fra seksjon 1.10.32 og 1.10.33 i 
+                    "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) av Cicero, skrevet i år 45 f.kr. 
+                    Boken er en avhandling om teorier rundt etikk, og var veldig populær under renessansen. Den første 
+                    linjen av Lorem Ipsum, "Lorem Ipsum dolor sit amet...", er hentet fra en linje i seksjon 1.10.32.';
+
+        // $post_thumbnail_id = wp_insert_post(
+        //     array(
+        //         'comment_status'	=>	'closed',
+        //         'ping_status'		=>	'closed',
+        //         'post_author'		=>	$author_id,
+        //         'post_title'		=>	$temp,
+        //         'post_content'      =>  $img_src,
+        //         'post_status'		=>	'publish',
+        //         'post_type'		    =>	'attachment',
+        //         'post_excerpt' => ''
+        //     )
+        // );
+        $post_id = wp_insert_post(
+            array(
+                'comment_status'	=>	'closed',
+                'ping_status'		=>	'closed',
+                'post_author'		=>	$author_id,
+                'post_title'		=>	$title,
+                'post_content'      =>  $content,
+                'post_status'		=>	'publish',
+                'post_type'		    =>	'post',
+                'post_excerpt' => ''
+            )
+        );
+
+        // set_post_thumbnail( $post_id, $thumbnail_id );
+    }
+}
+add_shortcode('post_entrepreneurship_shortcode', 'post_entrepreneurship_shortcode');
+
 /***
  * Handles redirection of already logged users if they go to login or register pages
  *
